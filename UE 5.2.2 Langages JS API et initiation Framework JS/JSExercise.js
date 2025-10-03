@@ -1,5 +1,5 @@
 const somme = (A, B) => {
-    somme = A + B;
-    console.log("résultat =" + somme)
+    const result = A + B;
+    console.log("résultat =" + result)
 }
 somme(2,4);
