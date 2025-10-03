@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const stringResult = "Résultat de l\’opération = ";
 const Tva20 = 0.2;
 const arrayOfNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -125,13 +127,81 @@ const multiplicationTable = (N) => {
     console.log(table)
 }
 const sommeOfNumbers = (N) => {
-    let table = [];
-    for (let i =0 ; i < 5; i++){
-        let result = N + i;
-        
-    }
-
+    let result = 0;
+    for (let i =1 ; i <=N; i++){
+        result = result + i;
+    };
+    console.log(result)
 }
+const productOfNumbers = (N) => {
+    let result = 1;
+    for (let i =1 ; i <=N; i++){
+        result = result * i;
+    };
+    console.log(result)
+}
+
+const compareNumber = (N) => {
+    if(N < 100 ){
+        console.log(N + " est plus petit que 100.");
+    }else{
+        console.log(N + " est plus grand que 100.")
+    }
+}
+
+const ageCategory = () => {
+    let arrayOfAge = [];
+    let poussin = [];
+    let benjamin = [];
+    let cadet = [];
+    let junior = [];
+    let senior = [];
+    const randomAges = (min, max) => {
+        min = Math.ceil(min);
+        max = Math.ceil(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    for( let i = 0; i < 15; i++){
+        arrayOfAge.push(randomAges(5, 64))
+    }
+    for( let i = 0; i < arrayOfAge.length; i++){
+        let N = arrayOfAge[i];
+        if(N < 11 ) {
+            poussin.push(N);
+        } if(N < 13){
+            benjamin.push(N);
+        } if (N < 15) {
+            cadet.push(N);            
+        } if (N < 17) {
+            junior.push(N);
+        } else {
+            senior.push(N);
+        }
+    }        
+console.log(poussin, benjamin, cadet, junior, senior)    
+}
+const getReducePrice = (N, TVA) => {
+    const tauxTva = TVA + 1;
+    let TTC = 0;
+    let HT = N;
+    let reducePrice = 0;
+    if ( HT >= 2000) {
+        reducePrice = (HT * 0.1);
+        reducePrice = HT - reducePrice
+        TTC = (reducePrice * tauxTva);
+       
+    } if (HT < 2000 && HT >= 1000) {
+        reducePrice = HT - (HT *0.05);
+        TTC = reducePrice * tauxTva;
+    } else {
+               TTC = HT * tauxTva;
+    }
+    let totalTVA = TTC - reducePrice;
+    console.log(totalTVA)
+    console.log (reducePrice)
+    console.log(TTC);
+}
+
 
 exo(7,5,2,3);
 priceExercice( 10, Tva20)
@@ -140,3 +210,8 @@ secondsConversion(594230)
 showQuinte()
 showPairNumber(arrayOfNumbers)
 multiplicationTable(5)
+sommeOfNumbers(4)
+productOfNumbers(4)
+compareNumber(150)
+ageCategory()
+getReducePrice(1500, Tva20)
