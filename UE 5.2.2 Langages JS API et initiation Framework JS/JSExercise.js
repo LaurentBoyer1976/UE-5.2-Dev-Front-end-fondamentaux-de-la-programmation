@@ -1,4 +1,3 @@
-import moment from 'moment';
 
 const stringResult = "Résultat de l\’opération = ";
 const Tva20 = 0.2;
