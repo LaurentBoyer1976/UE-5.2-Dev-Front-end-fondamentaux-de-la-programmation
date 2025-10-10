@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
     <head>
             <meta charset="utf-8">
@@ -101,6 +101,7 @@ h3{
 .contact{
     margin-left: 7rem;
     box-sizing: border-box;
+    margin-bottom: 1rem;
 } 
 .contact__email strong, .contact__phoneNumber strong{
     background: transparent;
@@ -173,20 +174,20 @@ h3{
     margin: 1rem;
     padding: 0.5rem;
 }
-.studies, .skills{
+.studies, .skills, .TP{
     background-color: var(--bck-grdColor);
     border-radius: 1rem;
 }
-.studies:hover, .skills:hover{
+.studies:hover, .skills:hover, .TP:hover{
     border: var(--yellow) solid 0.25rem;
     margin: 0.25rem;
     padding: 0.25rem;
 }
-.exp, .about{
+.exp, .about, .TP1{
      border-radius: 1rem;
      background-color: var(--yellow);
 }
-.exp:hover, .about:hover{
+.exp:hover, .about:hover, .TP1:hover{
     border: var(--bck-grdColor) solid 0.25rem;
     margin: 0.25rem;
     padding: 0.25rem;
@@ -209,6 +210,7 @@ footer>p{
     text-align: center;
     box-sizing: border-box;
 }
+
 </style>
 </head>
 <body>
@@ -216,7 +218,7 @@ footer>p{
         <h1 id="CV">Curriculum vitae Boyer Laurent: développeur informatique</h1>
     </div>
     
-    <hr>
+    <hr class="title__header">
         <dl class="address">
             <dt class="address__title">Adresse et contact:</dt>
             <dd class="address__identity">Boyer Laurent</dd>
@@ -229,16 +231,17 @@ footer>p{
             <p class="contact__phoneNumber">Téléphone: <strong><a href="tel:0687384936">06 87 38 49 36</a></strong></p>
             <p class="contact__realisation">Portfolio: <a href="https://laurentboyer1976.github.io/PresentationPortfolio-LaurentBoyer1976.github.io/"><img src="./assets/icons/portfolio_351456.png" alt="Icône de portfolio" width="30" height="30"></a></p>
         </address>
-        <hr>
-        <hr>
+        <hr class="header__toMain">
     <main>
         <header class="menu">
                 <nav class="navBar">
                   <ul class="navBar__list">
                     <li class="navBar__list--items studies"><a href="#formations">Formations</a></li>
-                    <li class="navBar__list--items exp"><a href="#exp">expériences</a></li>
-                    <li class="navBar__list--items skills"><a href="#competences">compétences</a></li>
-                    <li class="navBar__list--items about"><a href="#about">engagements et activités</a></li>
+                    <li class="navBar__list--items exp"><a href="#exp">Expériences</a></li>
+                    <li class="navBar__list--items skills"><a href="#competences">Compétences</a></li>
+                    <li class="navBar__list--items about"><a href="#about">Engagements et activités</a></li>
+                    <li class="navBar__list--items TP" ><a href="./TP1_CV.html">CV optimisé avec éléments structurant</a></li>
+                    <li class="navBar__list--items TP1" ><a href="./TP_N1_CV.html">CV optimisé sans éléments structurant</a></li>
                   </ul>  
                 </nav>
             </header> 
@@ -270,7 +273,7 @@ footer>p{
                     </li>
                 </ol>                    
             </section>
-            <hr>
+            <hr class="formation__toExp">
             <section id="exp">
                 <h2 class="exp__title">Expériences professionnelles:</h2>
                  <ol class="exp__list">
@@ -318,7 +321,7 @@ footer>p{
                     </li>
                 </ol>                    
             </section>
-            <hr>
+            <hr exp__toSkills>
             <section id="competences">
                 <h2 class="skills__title">Compétences:</h2>
                 <ol class="skills__list">
@@ -361,8 +364,8 @@ footer>p{
             </section>
         </article>
     </main>
-    <hr>
-    <hr>   
+    <hr class="skills__toAbout">
+    <hr class="skills__toAbout">   
     <aside id="about">
         <h2 class="about__tilte">Engagements et activités:</h2>
         <ul class="about__list">
@@ -372,7 +375,8 @@ footer>p{
             <li class="about__list--items--marker sport">Aide à la préparation et mise en place des entraînements hebdomadaires.</li>
         </ul>
     </aside> 
-    
+    <hr class="about__toFooter">
+    <hr class="about__toFooter"> 
     <footer>
         <p>Boyer Laurent année 2025</p>
     </footer>
