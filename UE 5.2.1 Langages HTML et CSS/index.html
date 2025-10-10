@@ -2,148 +2,163 @@
 <html lang="en">
 
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>alwaysdata</title>
-            <link rel="icon" type="image/png" href="https://static.alwaysdata.com/aldjango/img/favicon.png" />
-            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-            <link rel="stylesheet" href="https://static.alwaysdata.com/css/administration.css" type="text/css" media="all" />
-            <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-            <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
-    <title>TP1 CV Structure HTML:5</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>TP2 CV Structure HTML:5 CSS</title>
+            <meta name="description" content="Un CV sur page HTML 5 stylisé avec du css">
+            <meta name="author" content="Boyer Laurent">   
+            <meta name="keywords" content="CV, Expériences, Compétences, Activités, Etudes, Diplômes">     
+            <link rel="icon" type="image/png" href="https://static.alwaysdata.com/aldjango/img/favicon.png" />                        
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>           
+            <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund+Guides:wght@100..400&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Bungee+Shade&family=Nabla&display=swap" rel="stylesheet">                       
+            <link href="./styles/style.css" rel="stylesheet">
+            
 </head>
-<body style="background-color: antiquewhite; color:black;">
-    <h1>Curriculum vitae Boyer Laurent: développeur informatique</h1>
+<body>
+    <div class="title__container">
+        <h1 id="CV">Curriculum vitae Boyer Laurent: développeur informatique</h1>
+    </div>
+    
     <hr>
-        <dl>
-            <dt>Adresse et contact:</dt>
-            <dd>Boyer Laurent</dd>
-            <dd>1 rue bourgend</dd>
-            <dd>67204 Achenheim</dd>
-            <dd>Permis: <strong>A</strong> et <strong>B</strong></dd>
+        <dl class="address">
+            <dt class="address__title">Adresse et contact:</dt>
+            <dd class="address__identity">Boyer Laurent</dd>
+            <dd class="address__street">1 rue bourgend</dd>
+            <dd class="address__town">67204 Achenheim</dd>
+            <dd class="address__drivingLicence">Permis: <strong>A</strong> et <strong>B</strong></dd>
         </dl>
-        <address>            
-            <p>Courriel: <strong><a href="mailto:boyerlaurent30@gmail.com">boyerlaurent30@gmail.com</a></strong></p>
-            <p>Téléphone: <strong><a href="tel:0687384936">06 87 38 49 36</a></strong></p>
-            <p>Portfolio: <a href="https://laurentboyer1976.github.io/PresentationPortfolio-LaurentBoyer1976.github.io/"><img src="./assets/icons/portfolio_351456.png" alt="Icône de portfolio" width="30" height="30"></a></p>
+        <address class="contact">            
+            <p class="contact__email">Courriel: <strong><a href="mailto:boyerlaurent30@gmail.com">boyerlaurent30@gmail.com</a></strong></p>
+            <p class="contact__phoneNumber">Téléphone: <strong><a href="tel:0687384936">06 87 38 49 36</a></strong></p>
+            <p class="contact__realisation">Portfolio: <a href="https://laurentboyer1976.github.io/PresentationPortfolio-LaurentBoyer1976.github.io/"><img src="./assets/icons/portfolio_351456.png" alt="Icône de portfolio" width="30" height="30"></a></p>
         </address>
         <hr>
         <hr>
     <main>
-        <article>
-            <h2><strong><a href="#formations">Formations</a>, <a href="#exp">expériences</a> et <a href="#competences">compétences</a>:</strong></h2>
+        <header class="menu">
+                <nav class="navBar">
+                  <ul class="navBar__list">
+                    <li class="navBar__list--items studies"><a href="#formations">Formations</a></li>
+                    <li class="navBar__list--items exp"><a href="#exp">expériences</a></li>
+                    <li class="navBar__list--items skills"><a href="#competences">compétences</a></li>
+                    <li class="navBar__list--items about"><a href="#about">engagements et activités</a></li>
+                  </ul>  
+                </nav>
+            </header> 
+        <article>                       
             <section id="formations">
-                <h3>Formations et diplômes:</h3>
-                 <ol>
-                    <li>
-                        <h4>Licence professionnelle Développement Web conception apprentissage:</h4>                     
-                        <p><strong>Date:</strong> du <time datetime="2025-09-25">25 septembre 2025</time> au <time datetime="2026-08-31"> 31 Août 2026</time></p>              
+                <h2 class="formations__title">Formations et diplômes:</h2>
+                 <ol class="formations__list">
+                    <li class="formations__list--items">
+                        <h3 class="formations__list--items name">Licence professionnelle Développement Web conception apprentissage:</h3>                     
+                        <p class="formations__list--items--marker date"><strong>Date:</strong> du <time datetime="2025-09-25">25 septembre 2025</time> au <time datetime="2026-08-31"> 31 Août 2026</time></p>              
                         
-                            <p><strong>titre :</strong> Licence professionnelle de niveau 6 </p>
-                            <p>Formation développement web à l'université de Strasbourg.</p>
-                            <p>Apprentissage des langages HTML, CSS, Vanilla JS et de la librairie React.</p>
-                            <p>Apprentissage de Redux, Jest, MongoDB.</p>
-                            <p>Approche du web sémantique, de l’accessibilité web et des bonnes pratique de programmation.</p>
+                            <p class="formations__list--items--marker degree"><strong>titre :</strong> Licence professionnelle de niveau 6 </p>
+                            <p class="formations__list--items--marker school">Formation développement web à l'université de Strasbourg.</p>
+                            <p class="formations__list--items--marker knowledge">Apprentissage des langages HTML, CSS, Vanilla JS et de la librairie React.</p>
+                            <p class="formations__list--items--marker knowledge">Apprentissage de Redux, Jest, MongoDB.</p>
+                            <p class="formations__list--items--marker knowledge">Approche du web sémantique, de l’accessibilité web et des bonnes pratique de programmation.</p>
                         
                     </li>
-                    <li>
-                        <h4>Développeur d'application logiciel:</h4>                     
-                        <p><strong>Date:</strong> du <time datetime="2024-07-07">08 juillet 2024</time> au <time datetime="2025-07-07"> 07juillet 2025</time></p>                   
+                    <li class="formations__list--items">
+                        <h3 class="formations__list--items name">Développeur d'application logiciel:</h3>                     
+                        <p class="formations__list--items--marker date"><strong>Date:</strong> du <time datetime="2024-07-07">08 juillet 2024</time> au <time datetime="2025-07-07"> 07juillet 2025</time></p>                   
                         
-                            <p><strong>titre :</strong> RNCP 38038 de niveau 6 </p>
-                            <p>Formation développeur d'application et logiciel Javascript/React chez Openclassrooms sur 1 an.</p>
-                            <p>Apprentissage des langages HTML, CSS, Vanilla JS et de la librairie React.</p>
-                            <p>Apprentissage de Redux, Jest, MongoDB.</p>
-                            <p>Approche du web sémantique, de l’accessibilité web et des bonnes pratique de programmation</p>
+                            <p class="formations__list--items--marker degree"><strong>titre :</strong> RNCP 38038 de niveau 6 </p>
+                            <p class="formations__list--items--marker school">Formation développeur d'application et logiciel Javascript/React chez Openclassrooms sur 1 an.</p>
+                            <p class="formations__list--items--marker knowledge">Apprentissage des langages HTML, CSS, Vanilla JS et de la librairie React.</p>
+                            <p class="formations__list--items--marker knowledge">Apprentissage de Redux, Jest, MongoDB.</p>
+                            <p class="formations__list--items--marker knowledge">Approche du web sémantique, de l’accessibilité web et des bonnes pratique de programmation</p>
                         
                     </li>
                 </ol>                    
             </section>
             <hr>
             <section id="exp">
-                <h3>Expériences professionnelles:</h3>
-                 <ol>
-                    <li>
-                        <h4>Solutyo</h4>                     
-                        <p><strong>Date: </strong>du <time datetime="2025-09-29">29 septembre 2025</time> au <time datetime="2026-08-31"> 31 Août 2026</time></p>              
+                <h2 class="exp__title">Expériences professionnelles:</h2>
+                 <ol class="exp__list">
+                    <li class="exp__list--items">
+                        <h3 class="exp__list--items company">Solutyo</h3>                     
+                        <p class="exp__list--items--marker date"><strong>Date: </strong>du <time datetime="2025-09-29">29 septembre 2025</time> au <time datetime="2026-08-31"> 31 Août 2026</time></p>              
                         
-                        <p><strong>type de contrat:</strong></p>
-                            <p>Contrat de professionnalisation dans le cadre de la formation par alternance à l'Unistra</p>
-                        <p><strong>Poste :</strong> Développeur </p>
-                            <p>Développement de MES via la plateforme low-code Intrexx.</p>
-                            <p>Analyse des besoins, maquettage, prototypage...</p>
-                            <p>Usage de JS, Groovy script, postgreSQL</p>
-                            <p>Accompagnement vers le passage à l'industrie 4.0</p>
-                        
-                    </li>
-                    <li>
-                        <h4>Euro Protection Surveillance/Homiris:</h4>                     
-                        <p><strong>Date: </strong> du <time datetime="2012-04-01">01 avril 2012</time> au <time datetime="2025-07-15"> 15 juillet 2025</time></p>                   
-                        
-                            <p><strong>type de contrat:</strong></p>
-                            <p>Contrat à durée indéterminée</p>
-                        <p><strong>Poste :</strong> Gestionnaire de sinistre de <time datetime="2023-03">mars 2023</time> au <time datetime="2025-07-15">15 juillet 2025</time></p>                           
-                            <p>Gestion des sinistres</p>
-                            <p>Gestion post sinistre.</p>
-                            <p>Accompagnement administratif, analyse des process.</p>
-                            <p>Gestion clientèle, analyse technique, reporting des problématiques.</p>
-                        <p><strong>Poste :</strong> Opérateur SCT1 de <time datetime="2012-04">avril 2012</time> au <time datetime="2023-03">mars 2023</time></p>                           
-                            <p>Gestion des déclenchements d'alarme, levée de doute...</p>
-                            <p>Relation clientèle, reporting...</p>
+                        <p class="exp__list--items--marker "><strong>type de contrat:</strong></p>
+                            <p class="exp__list--items--marker contract">Contrat de professionnalisation dans le cadre de la formation par alternance à l'Unistra</p>
+                        <p class="exp__list--item--marker position"><strong>Poste :</strong> Développeur </p>
+                            <p class="exp__list--items--marker job">Développement de MES via la plateforme low-code Intrexx.</p>
+                            <p class="exp__list--items--marker job">Analyse des besoins, maquettage, prototypage...</p>
+                            <p class="exp__list--items--marker job">Usage de JS, Groovy script, postgreSQL</p>
+                            <p class="exp__list--items--marker job">Accompagnement vers le passage à l'industrie 4.0</p>
                         
                     </li>
-                    <li>
-                        <h4>Architecture du bois:</h4>                     
-                        <p><strong>Date: </strong> du <time datetime="2008-06-01">juin 2008</time> au <time datetime="2009-04-01">avril 2009</time></p>                   
+                    <li class="exp__list--items">
+                        <h3 class="exp__list--items company">Euro Protection Surveillance/Homiris:</h3>                     
+                        <p class="exp__list--items--marker date"><strong>Date: </strong> du <time datetime="2012-04-01">01 avril 2012</time> au <time datetime="2025-07-15"> 15 juillet 2025</time></p>                   
                         
-                            <p><strong>type de contrat:</strong></p>
-                            <p>Contrat à durée indéterminée</p>
-                        <p><strong>Poste :</strong> Acheteur, gestionnaire de stock.</p>                           
-                            <p>Gestion informatique du stock (excel-VBA)</p>
-                            <p>Prospection, mise en place de relation commercial France et Europe.(mailing reporting)</p>
-                            <p>Mise en place de process de gestion(création d'un système numérique de suivi de produits).</p>
-                            <p>Suivi et règlement de litige.</p>
+                            <p class="exp__list--items--marker "><strong>type de contrat:</strong></p>
+                            <p class="exp__list--items--marker contract">Contrat à durée indéterminée</p>
+                        <p class="exp__list--items--marker"><strong>Poste :</strong> Gestionnaire de sinistre de <time datetime="2023-03">mars 2023</time> au <time datetime="2025-07-15">15 juillet 2025</time></p>                           
+                            <p class="exp__list--items--marker job">Gestion des sinistres</p>
+                            <p class="exp__list--items--marker job">Gestion post sinistre.</p>
+                            <p class="exp__list--items--marker job">Accompagnement administratif, analyse des process.</p>
+                            <p class="exp__list--items--marker job">Gestion clientèle, analyse technique, reporting des problématiques.</p>
+                        <p class="exp__list--items--marker position"><strong>Poste :</strong> Opérateur SCT1 de <time datetime="2012-04">avril 2012</time> au <time datetime="2023-03">mars 2023</time></p>                           
+                            <p class="exp__list--items--marker job">Gestion des déclenchements d'alarme, levée de doute...</p>
+                            <p class="exp__list--items--marker job">Relation clientèle, reporting...</p>
+                        
+                    </li>
+                    <li class="exp__list--items">
+                        <h3 class="exp__list--items company">Architecture du bois:</h3>                     
+                        <p class="exp__list--items--marker date "><strong>Date: </strong> du <time datetime="2008-06-01">juin 2008</time> au <time datetime="2009-04-01">avril 2009</time></p>                   
+                        
+                            <p class="exp__list--items--marker "><strong>type de contrat:</strong></p>
+                            <p class="exp__list--items--marker contract">Contrat à durée indéterminée</p>
+                        <p class="exp__list--items--marker position"><strong>Poste :</strong> Acheteur, gestionnaire de stock.</p>                           
+                            <p class="exp__list--items--marker job">Gestion informatique du stock (excel-VBA)</p>
+                            <p class="exp__list--items--marker job">Prospection, mise en place de relation commercial France et Europe.(mailing reporting)</p>
+                            <p class="exp__list--items--marker job">Mise en place de process de gestion(création d'un système numérique de suivi de produits).</p>
+                            <p class="exp__list--items--marker job">Suivi et règlement de litige.</p>
                         
                     </li>
                 </ol>                    
             </section>
             <hr>
             <section id="competences">
-                <h3>Compétences:</h3>
-                <ol>
-                    <li>
-                        <h4>Développement Front-end:</h4>
+                <h2 class="skills__title">Compétences:</h2>
+                <ol class="skills__list">
+                    <li class="skills__list--items">
+                        <h3 class="skills__list--items area">Développement Front-end:</h3>
                         
-                            <p><strong>Web:</strong></p>                           
-                                <p>JS, React, Angular(base)</p>
-                                <p>Bootstrap, SASS.</p>
-                                <p>Node.js, Jest, Redux</p>                                                       
+                            <p class="skills__list--items--marker part"><strong>Web:</strong></p>                           
+                                <p class="skills__list--items--marker hard-skill">JS, React, Angular(base)</p>
+                                <p class="skills__list--items--marker hard-skill">Bootstrap, SASS.</p>
+                                <p class="skills__list--items--marker hard-skill">Node.js, Jest, Redux</p>                                                       
+                        
+                    </li>
+                    <li class="skills__list--items">
+                        <h3 class="skills__list--items area part">Développement Back-end :</h3>
+                        
+                            <p class="skills__list--items--marker"><strong>Data-base:</strong></p>
+                                <p class="skills__list--items--marker hard-skill">MongoDB; Json,SQL(base)</p>
+                                <p class="skills__list--items--marker hard-skill">PostgreSQL.</p>                                                                                    
                         
                     </li>
                     <li>
-                        <h4>Développement Back-end :</h4>
+                        <h3 class="skills__list--items area part">UX/UI, design, gestion de projet :</h3>
                         
-                            <p><strong>Data-base:</strong></p>
-                                <p>MongoDB; Json,SQL(base)</p>
-                                <p>PostgreSQL.</p>                                                                                    
-                        
-                    </li>
-                    <li>
-                        <h4>UX/UI, design, gestion de projet :</h4>
-                        
-                            <p><strong>Outils:</strong></p>
-                                <p>Trello, Figma, environnement OFFICE</p>
-                                <p>DrawIo, UML, Processing...</p>                            
-                                <p>Relation client, analyse des besoins, mailing, reporting...</p>                                                      
+                            <p class="skills__list--items--marker"><strong>Outils:</strong></p>
+                                <p class="skills__list--items--marker hard-skill">Trello, Figma, environnement OFFICE</p>
+                                <p class="skills__list--items--marker hard-skill">DrawIo, UML, Processing...</p>                            
+                                <p class="skills__list--items--marker hard-skill">Relation client, analyse des besoins, mailing, reporting...</p>                                                      
                         
                     </li>
 
-                    <li>
-                        <h4>Langue :</h4>
+                    <li class="skills__list--items">
+                        <h3 class="skills__list--items area">Langue :</h3>
                         
-                            <p><strong>Anglais:</strong></p>
-                                <p>Lu, parlé et écrit.</p>
-                                <p>Niveau A2 non officiel.</p>                                                       
+                            <p class="skills__list--items--marker language"><strong>Anglais:</strong></p>
+                                <p class="skills__list--items--marker hard-skill">Lu, parlé et écrit.</p>
+                                <p class="skills__list--items--marker hard-skill">Niveau A2 non officiel.</p>                                                       
                         
                     </li>
                 </ol>
@@ -152,15 +167,19 @@
     </main>
     <hr>
     <hr>   
-    <aside>
-        <h3>Hobby, centre d'intérêt:</h3>
-        <ul>
-            <li>Pratique du hockey sur glace compétitif(Trophée fédéral)</li>
-            <li>Assistant coach/aide entraîneur au sein du CSGSA Strasbourg BLack Stars</li>
-            <li>Coaching d'une équipe U11 en relève du head-coach.</li>
-            <li>Aide à la préparation et mise en place des entraînements hebdomadaires.</li>
+    <aside id="about">
+        <h2 class="about__tilte">Engagements et activités:</h2>
+        <ul class="about__list">
+            <li class="about__list--items--marker sport">Pratique du hockey sur glace compétitif. (Trophée fédéral)</li>
+            <li class="about__list--items--marker sport">Assistant coach/aide entraîneur au sein du CSGSA Strasbourg BLack Stars.</li>
+            <li class="about__list--items--marker sport">Coaching d'une équipe U11 en relève du head-coach.</li>
+            <li class="about__list--items--marker sport">Aide à la préparation et mise en place des entraînements hebdomadaires.</li>
         </ul>
-    </aside>    
+    </aside> 
+    
+    <footer>
+        <p>Boyer Laurent année 2025</p>
+    </footer>
 </body>
 
 </html>
