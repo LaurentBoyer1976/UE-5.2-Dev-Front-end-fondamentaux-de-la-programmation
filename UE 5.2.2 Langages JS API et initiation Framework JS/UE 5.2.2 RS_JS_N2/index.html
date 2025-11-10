@@ -4,7 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TP to do list</title>
+
+    <style>
+      .logs{display:flex;flex-direction:column;gap:12px}
+      .log-card{border:1px solid #444;background:#111;border-radius:6px;overflow:hidden}
+      .log-title{background:#222;color:#0f0;padding:6px 10px;font-weight:600}
+      .log-body{margin:0;padding:10px;color:#0f0;white-space:pre-wrap}
+    </style>
+
     <script>
+        // === Proxy console.log -> page + console ===
+        (function() {
+          const nativeLog = console.log.bind(console);
+          const buffer = [];
+          let target = null;
+
+          function serialize(arg) {
+            if (typeof arg === 'string') return arg;
+            try { return JSON.stringify(arg); } catch { return String(arg); }
+          }
+          function write(line) {
+            if (!target) { buffer.push(line); return; }
+            const div = document.createElement('div');
+            div.textContent = line;
+            target.appendChild(div);
+          }
+
+          console.log = (...args) => {
+            nativeLog(...args);
+            const line = args.map(serialize).join(' ');
+            write(line);
+          };
+
+          window.addEventListener('DOMContentLoaded', () => {
+            target = document.getElementById('console-output');
+            if (!target) {
+              target = document.createElement('pre');
+              target.id = 'console-output';
+              document.body.prepend(target);
+            }
+            buffer.forEach(write);
+          });
+        })();
+
+        // === Logger: crée une "carte" par log, avec titre ===
+        (function() {
+          const buffer = [];
+
+          function pretty(v){
+            if (typeof v === 'string') return v;
+            try { return JSON.stringify(v, null, 2); } catch { return String(v); }
+          }
+          function buildCard(title, values){
+            const card = document.createElement('section');
+            card.className = 'log-card';
+            const t = document.createElement('div');
+            t.className = 'log-title';
+            t.textContent = title;
+            const pre = document.createElement('pre');
+            pre.className = 'log-body';
+            pre.textContent = values.map(pretty).join('\n');
+            card.appendChild(t);
+            card.appendChild(pre);
+            return card;
+          }
+          function ensureRoot(){
+            let root = document.getElementById('logs');
+            if (!root && document.body){
+              root = document.createElement('div');
+              root.id = 'logs';
+              root.className = 'logs';
+              document.body.prepend(root);
+            }
+            return root;
+          }
+          window.logSection = function(title, ...values){
+            console.log(title + ':', ...values); // conserve l’affichage console
+            const card = buildCard(title, values);
+            const root = ensureRoot();
+            if (root) root.appendChild(card); else buffer.push(card);
+          };
+          window.addEventListener('DOMContentLoaded', () => {
+            const root = ensureRoot();
+            buffer.forEach(card => root.appendChild(card));
+            buffer.length = 0;
+          });
+        })();
+
+        // === Données ===
         let priorityStatus = [
             {"idPriorite":"1","priorite":"Important"},
             {"idPriorite":"2","priorite":"Haut"},
@@ -12,8 +99,7 @@
             {"idPriorite":"4","priorite":"Bas"},
             {"idPriorite":"5","priorite":"Non important"}
         ];
-
-        console.log(priorityStatus);
+        logSection("Priorités", priorityStatus);
 
         let taskProgression = [
             {"idTaskProgression":"1","taskProgressionStatus":"Nouvelle tâche"},
@@ -24,8 +110,7 @@
             {"idTaskProgression":"6","taskProgressionStatus":"Terminé"},
             {"idTaskProgression":"7","taskProgressionStatus":"Archivé"}
         ];
-
-        console.log(taskProgression);
+        logSection("Progression des tâches", taskProgression);
 
         let academicSubjects = [
             {"idAcademicSubject":"1","academicSubjectName":"HTML/CSS"},
@@ -69,8 +154,7 @@
             {"idAcademicSubject":"39","academicSubjectName":"Growth hacking et acquisition client"},
             {"idAcademicSubject":"40","academicSubjectName":"Webmarketing et e-reputation"}
         ];
-
-        console.log(academicSubjects);
+        logSection("Matières", academicSubjects);
 
         let skillsLevels = [
             {"idSkillsLevel":"1","level":"débutant","description":"Découverte des concepts de base","experienceRequired":"0-6 mois"},
@@ -82,8 +166,7 @@
             {"idSkillsLevel":"7","level":"expert confirmé","description":"Leadership technique et mentorat","experienceRequired":"7+ ans"},
             {"idSkillsLevel":"8","level":"maître","description":"Référence dans le domaine","experienceRequired":"10+ ans"}
         ];
-
-        console.log(skillsLevels);
+        logSection("Niveaux de compétence", skillsLevels);
 
         let difficultyRatings = [
             {"idDifficultyRating":"1","estimatedDifficulty":"facile","note":"Niveau débutant - concepts de base","skillsLevelIds":["1","2"]},
@@ -91,8 +174,7 @@
             {"idDifficultyRating":"3","estimatedDifficulty":"difficile","note":"Niveau avancé - expertise technique","skillsLevelIds":["5","6"]},
             {"idDifficultyRating":"4","estimatedDifficulty":"très difficile","note":"Niveau expert - maîtrise complète","skillsLevelIds":["7","8"]}
         ];
-
-        console.log(difficultyRatings);
+        logSection("Difficultés estimées", difficultyRatings);
 
         let toDoList = [
             {
@@ -114,18 +196,10 @@
                 "to_do_list_associee":[
                     {
                         "ToDoA":[
-                            {
-                                "idToDoA":"A1",
-                                "subTask":"Structure HTML",
-                                "commentaire":"Créer la structure sémantique"
-                            }
+                            {"idToDoA":"A1","subTask":"Structure HTML","commentaire":"Créer la structure sémantique"}
                         ],
                         "ToDoB":[
-                            {
-                                "idToDoB":"B1",
-                                "subTask":"Styles CSS",
-                                "commentaire":"Appliquer les styles responsive"
-                            }
+                            {"idToDoB":"B1","subTask":"Styles CSS","commentaire":"Appliquer les styles responsive"}
                         ]
                     }
                 ]
@@ -149,18 +223,10 @@
                 "to_do_list_associee":[
                     {
                         "ToDoA":[
-                            {
-                                "idToDoA":"A2",
-                                "subTask":"Event Listeners",
-                                "commentaire":"Ajouter les gestionnaires d'événements"
-                            }
+                            {"idToDoA":"A2","subTask":"Event Listeners","commentaire":"Ajouter les gestionnaires d'événements"}
                         ],
                         "ToDoB":[
-                            {
-                                "idToDoB":"B2",
-                                "subTask":"Manipulation DOM",
-                                "commentaire":"Modifier dynamiquement les éléments"
-                            }
+                            {"idToDoB":"B2","subTask":"Manipulation DOM","commentaire":"Modifier dynamiquement les éléments"}
                         ]
                     }
                 ]
@@ -184,29 +250,23 @@
                 "to_do_list_associee":[
                     {
                         "ToDoA":[
-                            {
-                                "idToDoA":"A3",
-                                "subTask":"Variable Sass",
-                                "commentaire":"Lister et comprendre la syntaxe des variables"
-                            }
+                            {"idToDoA":"A3","subTask":"Variable Sass","commentaire":"Lister et comprendre la syntaxe des variables"}
                         ],
                         "ToDoB":[
-                            {
-                                "idToDoB":"B3",
-                                "subTask":"Mixins",
-                                "commentaire":"Syntaxe, objectifs des mixins."
-                            }
+                            {"idToDoB":"B3","subTask":"Mixins","commentaire":"Syntaxe, objectifs des mixins."}
                         ]
                     }
                 ]
             }
         ];
-
-        console.log(toDoList);
-        
+        logSection("To-Do List", toDoList);
     </script>
 </head>
 <body>
-    <di><a>Cliquer ici</a></di>
+    <main>
+      <h1>TP to do list</h1>
+      <!-- Remplace l’ancien <pre id="console-output"> par ce conteneur -->
+      <div id="logs" class="logs"></div>
+    </main>
 </body>
 </html>

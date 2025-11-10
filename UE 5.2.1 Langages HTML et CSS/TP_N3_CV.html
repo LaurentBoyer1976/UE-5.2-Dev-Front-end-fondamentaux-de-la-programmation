@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Laurent Boyer - Développeur Web</title>
+    <meta name="description" content="CV de Laurent Boyer, développeur web spécialisé en JavaScript, React et technologies front-end">
+    <meta name="author" content="Boyer Laurent">   
+    <meta name="keywords" content="Développeur web, JavaScript, React, HTML, CSS, Frontend, Backend">     
+    <link rel="icon" type="image/png" href="https://static.alwaysdata.com/aldjango/img/favicon.png">                        
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>           
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund+Guides:wght@100..400&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Bungee+Shade&family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload stylesheet" type="text/css" href="./styles/style.css"></link>
+    <!--<style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "Playwrite DE Grund Guides", cursive, sans-serif, serif;
+        }
+        :root{
+            --size: 20px;
+            --bck-grdColor: #ffed94;
+            --yellow: #feac5e;
+            --yellow1: #eb8220;
+            --lightblue: #4bc0c8;    
+            --lightblue1:#41a6ad;
+            --lightblue2: #256266;
+        }
+        body{
+            background-color: #f5f5f5;
+            min-height: 100vh;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-family: "Alegreya", serif;
+            transition: all 0.5s ease;   
+        }
+        .title__container{
+           background-color: #ffed94;
+        }
+        h1{
+            font-family: "Bungee Shade", cursive;
+            font-weight: 400;
+            text-align: center;
+            width: 100%;
+            padding: 2.5rem 1rem; 
+            font-size: 2vw;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: var(--size) var(--size);
+            background: linear-gradient(
+                    -45deg,
+                    #4bc0c8 25%,
+                    #feac5e 25%,
+                    #feac5e 50%,
+                    #4bc0c8 50%,
+                    #4bc0c8 75%,
+                    #feac5e 75%,
+                    #feac5e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: var(--size) var(--size);
+            background-position: 0 0;
+            animation: stripes 1s linear infinite;
+            box-sizing: border-box;
+        }
+        @keyframes stripes {
+            0%{
+                background-position: 0 0;
+            }
+            100% { 
+                background-position: var(--size) 0;
+            }
+        }
+        h2{
+            margin-left: 100px;
+            margin-right: 50px;
+        }
+        h3{
+            margin-left: 150px;
+        }
+        .address{
+            margin-left: 1rem;
+            padding: 1rem 0 0 0;     
+        }
+        .address__title{
+            font-size: 1.1vw;
+            font-weight: 400;
+            margin-left: 1.5rem;
+            text-decoration-line: underline;
+            text-decoration-color:var(--lightblue);
+        }        
+        .address__title ~ dd{
+            margin-left: 6rem;
+        }
+        .contact{
+            margin-left: 7rem;
+            box-sizing: border-box;
+            margin-bottom: 1rem;
+        } 
+        .contact__email strong, .contact__phoneNumber strong{
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
+            transition: all 1s ease;    
+        }
+        .contact__phoneNumber strong:hover, .contact__email strong:hover{
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+            background: linear-gradient(to left, var(--lightblue), var(--lightblue1), var(--lightblue2));
+            padding: 0.5px 2px 0.5px 1px;
+        }
+        .contact__realisation > a, .contact__realisation > a > img {
+            text-align: center;
+        }
+        .contact a:hover{
+            background: linear-gradient(to left, var(--yellow1), var(--yellow), var(--bck-grdColor));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 5px;
+        }
+        .menu{
+            text-align: center;
+            margin: 1rem;
+        }
+        .navBar{
+            padding: 1.5rem;
+            background-color: var(--lightblue);
+            border-radius: 1rem;
+        }
+        .navBar__list{
+            list-style:none;
+        }
+        .navBar__list--items{
+            font-size: 1.5rem;
+            margin: 1rem;
+            padding: 0.5rem;
+        }
+       .studies, .skills, .TP{
+    background-color: var(--bck-grdColor);
+    border-radius: 1rem;
+}
+.studies:hover, .skills:hover, .TP:hover{
+    border: var(--yellow) solid 0.25rem;
+    margin: 0.25rem;
+    padding: 0.25rem;
+}
+.exp, .about, .TP1{
+     border-radius: 1rem;
+     background-color: var(--yellow);
+}
+.exp:hover, .about:hover, .TP1:hover{
+    border: var(--bck-grdColor) solid 0.25rem;
+    margin: 0.25rem;
+    padding: 0.25rem;
+}
+        .formations__title, .exp__title, .skills__title, .about__title{
+            padding: 2rem;
+            box-sizing: border-box;
+            background-color: rgba(69, 197, 217, 0.1);
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+        }
+        .formations__list--items--marker, .exp__list--items--marker, .skills__list--items--marker, .about__list--items--marker, .position{
+            margin-left: 15rem;
+        }
+        .footer{
+            margin: 2rem 0 0 0;
+        }
+        .footer p{
+            padding: 2rem 1rem;
+            text-align: center;
+            box-sizing: border-box;
+        }
+    </style>-->
+</head>
+<body>
+<header class="menu">
+    <!-- En-tête du CV -->
+    <div class="title__container">
+        <h1>Curriculum vitae Boyer Laurent : développeur informatique</h1>
+    </div>
+    <!-- Informations personnelles -->
+    <div class="menu__items">
+        <dl class="address">
+            <dt class="address__title">Adresse et contact:</dt>
+            <dd class="address__identity">Boyer Laurent</dd>
+            <dd class="address__street">1 rue Bourgend</dd>
+            <dd class="address__town">67204 Achenheim</dd>
+            <dd class="address__drivingLicence">Permis: <strong>A</strong> et <strong>B</strong></dd>
+        </dl>
+
+        <!-- Contact -->
+        <address class="contact">
+            <p class="contact__email">Courriel: <strong><a href="mailto:boyerlaurent30@gmail.com">boyerlaurent30@gmail.com</a></strong></p>
+            <p class="contact__phoneNumber">Téléphone : <strong><a href="tel:0687384936">06 87 38 49 36</a></strong></p>
+            <p class="contact__realisation">Portfolio: <a href="https://laurentboyer1976.github.io/PresentationPortfolio-LaurentBoyer1976.github.io/"><img src="./assets/icons/portfolio_351456.png" alt="Icône de portfolio" width="30" height="30"></a></p>
+        </address>
+    </div>
+
+
+    
+    <!-- Navigation du CV -->
+
+        <nav class="navBar">
+            <ul class="navBar__list">
+                <li class="navBar__list--items studies"><a href="#formations">Formations</a></li>
+                <li class="navBar__list--items exp"><a href="#experiences">Expériences</a></li>
+                <li class="navBar__list--items skills"><a href="#competences">Compétences</a></li>
+                <li class="navBar__list--items about"><a href="#activites">Engagements et activités</a></li>
+                <li class="navBar__list--items TP" ><a href="./index.html">Vers CV index</a></li>
+                <li class="navBar__list--items TP1" ><a href="./TP1_CV.html">CV optimisé avec éléments structurant</a></li>
+            </ul>  
+        </nav>
+    </header>
+    
+    <!-- Contenu principal -->
+    <main class="content">
+
+        <!-- Formations -->
+        <article id="formations">
+            <header class="formations__header">
+                <h2 class="formations__title">Formations et diplômes :</h2>
+            </header>
+
+            <section class="list__container">
+                <h3 class="formations__list--items name">Licence professionnelle Développement Web conception apprentissage</h3>
+                <dl class="formations__details">
+
+                    <dt class="formations__marker date">Date :</dt>
+                    <dd class="formations__value">du <time datetime="2025-09-25">25 septembre 2025</time> au <time datetime="2026-08-31">31 août 2026</time></dd>
+
+                    <dt class="formations__marker degree">Titre :</dt>
+                    <dd class="formations__value">Licence professionnelle de niveau 6</dd>
+
+                    <dt class="formations__marker school">Organisme :</dt>
+                    <dd class="formations__value">Université de Strasbourg (Formation développement web).</dd>
+
+                    <dt class="formations__marker knowledge">Sujets clés :</dt>
+                    <dd class="formations__value">Apprentissage des langages HTML, CSS, Vanilla JS et de la librairie React.</dd>
+                    <dd class="formations__value">Apprentissage de Redux, Jest, MongoDB.</dd>
+                    <dd class="formations__value">Approche du web sémantique, de l'accessibilité web et des bonnes pratiques de programmation.</dd>
+                </dl>
+            </section>
+
+            <section class="list__container">
+                <h3 class="formations__list--items name">Développeur d'application logiciel</h3>
+                <dl class="formations__details">
+
+                    <dt class="formations__marker date">Date :</dt>
+                    <dd class="formations__value">du <time datetime="2024-07-08">08 juillet 2024</time> au <time datetime="2025-07-07">07 juillet 2025</time></dd>
+
+                    <dt class="formations__marker degree">Titre :</dt>
+                    <dd class="formations__value">RNCP 38038 de niveau 6</dd>
+
+                    <dt class="formations__marker school">Organisme :</dt>
+                    <dd class="formations__value">OpenClassrooms (Formation développeur d'application et logiciel Javascript/React sur 1 an).</dd>
+
+                    <dt class="formations__marker knowledge">Sujets clés :</dt>
+                    <dd class="formations__value">Apprentissage des langages HTML, CSS, Vanilla JS et de la librairie React.</dd>
+                    <dd class="formations__value">Apprentissage de Redux, Jest, MongoDB.</dd>
+                    <dd class="formations__value">Approche du web sémantique, de l'accessibilité web et des bonnes pratiques de programmation.</dd>
+                </dl>
+            </section>
+        </article>
+
+        <!-- Expériences -->
+        <article id="experiences">
+            <header class="experiences__header">
+                <h2 class="exp__title">Expériences professionnelles :</h2>
+            </header>
+            <section class="list__container">
+                <h3 class="exp__list--items company">Solutyo</h3>
+                <dl class="exp__list">
+                    <dt class="exp__list--items">Date :</dt>
+                        <dd class="exp__list--items--marker date"> du <time datetime="2025-09-29">29 septembre 2025</time> au <time datetime="2026-08-31">31 août 2026</time></dd>
+                    <dt class="exp__list--items--marker">Type de contrat :</dt>
+                        <dd class="exp__list--items--marker contract">Contrat de professionnalisation dans le cadre de la formation par alternance à l'Unistra</dd>
+                    <dt class="exp__list--items--marker position">Poste :</dt>
+                        <dd class="exp__list--items--marker mission">Développeur</dd>
+                    <dt class="exp__list--items--marker position">Missions :</dt>
+                        <dd class="exp__list--items--marker job">Développement de MES via la plateforme low-code Intrexx.</dd>
+                        <dd class="exp__list--items--marker job">Analyse des besoins, maquettage, prototypage...</dd>
+                        <dd class="exp__list--items--marker job">Usage de JS, Groovy script, PostgresSQL</dd>
+                        <dd class="exp__list--items--marker job">Accompagnement vers le passage à l'industrie 4.0</dd>
+                </dl>
+            </section>
+            <section class="list__container">
+                <h3 class="exp__list--items company">Euro Protection Surveillance/Homiris:</h3>
+                <dl class="exp__list">
+                    <dt class="exp__list--items">Date :</dt>
+                        <dd class="exp__list--items--marker date">du <time datetime="2012-04-01">01 avril 2012</time> au <time datetime="2025-07-15">15 juillet 2025</time></dd>
+                    <dt class="exp__list--items--marker">Type de contrat :</dt>
+                        <dd class="exp__list--items--marker contract">Contrat à durée indéterminée</dd>
+                    <dt class="exp__list--items--marker">Poste : </dt>
+                        <dd class="exp__list--items--marker mission">Gestionnaire de sinistre</dd>
+                        <dd class="exp__list--items--marker date">de <time datetime="2023-03">mars 2023</time> au <time datetime="2025-07-15">15 juillet 2025</time></dd>
+                    <dt class="exp__list--items--marker position">Missions :</dt>
+                        <dd class="exp__list--items--marker job">Gestion des sinistres</dd>
+                        <dd class="exp__list--items--marker job">Gestion post sinistre.</dd>
+                        <dd class="exp__list--items--marker job">Accompagnement administratif, analyse des process.</dd>
+                        <dd class="exp__list--items--marker job">Gestion clientèle, analyse technique, reporting des problématiques.</dd>
+                    <dt class="exp__list--items--marker position">Poste :</dt>
+                        <dd class="exp__list--items--marker job">Opérateur SCT1</dd>
+                        <dd class="exp__list--items--marker date">de <time datetime="2012-04">avril 2012</time> au <time datetime="2023-03">mars 2023</time></dd>
+                    <dt class="exp__list--items--marker mission">Missions :</dt>
+                        <dd class="exp__list--items--marker job">Gestion des déclenchements d'alarme, levée de doute...</dd>
+                        <dd class="exp__list--items--marker job">Relation clientèle, reporting...</dd>
+                </dl>
+            </section>
+            <section class="list__container">
+                <h3 class="exp__list--items company">Architecture du bois :</h3>
+                <dl class="exp__list">
+                    <dt class="exp__list--items">Date :</dt>
+                        <dd class="exp__list--items--marker date"> du <time datetime="2008-06-01">juin 2008</time> au <time datetime="2009-04-01">avril 2009</time></dd>
+                    <dt class="exp__list--items--marker">Type de contrat :</dt>
+                        <dd class="exp__list--items--marker contract">Contrat à durée indéterminée</dd>
+                    <dt class="exp__list--items--marker position">Poste :</dt>
+                        <dd class="exp__list--items--marker job">Acheteur, gestionnaire de stock.</dd>
+                    <dt class="exp__list--items--marker mission">Missions :</dt>
+                        <dd class="exp__list--items--marker job">Gestion informatique du stock (Excel-VBA)</dd>
+                        <dd class="exp__list--items--marker job">Prospection, mise en place de relation commerciale France et Europe (mailing, reporting)</dd>
+                        <dd class="exp__list--items--marker job">Mise en place de process de gestion (création d'un système numérique de suivi de produits).</dd>
+                        <dd class="exp__list--items--marker job">Suivi et règlement de litige.</dd>
+                </dl>
+            </section>
+        </article>
+        <!-- Compétences -->
+        <article id="competences">
+            <header class="skills__header">
+                <h2 class="skills__title">Compétences :</h2>
+            </header>
+
+            <section class="skills__container">
+                <h3 class="skills__list--items area">Développement Front-end :</h3>
+
+                <dl class="skills__list">
+
+                    <dt class="skills__list--items--marker part skills__list--items">Web:</dt>
+
+                    <dd class="skills__list--items--marker hard-skill">JS, React, Angular (base)</dd>
+                    <dd class="skills__list--items--marker hard-skill">Bootstrap, SASS.</dd>
+                    <dd class="skills__list--items--marker hard-skill">Node.js, Jest, Redux</dd>
+                </dl>
+            </section>
+
+            <section class="skills__container">
+                <h3 class="skills__list--items area part">Développement Back-end :</h3>
+                <dl class="skills__list">
+
+                    <dt class="skills__list--items--marker skills__list--items">Base de données :</dt>
+
+                    <dd class="skills__list--items--marker hard-skill">MongoDB; JSON, SQL (base)</dd>
+                    <dd class="skills__list--items--marker hard-skill">PostgresSQL.</dd>
+                </dl>
+            </section>
+
+            <section class="skills__container">
+                <h3 class="skills__list--items area part">UX/UI, design, gestion de projet :</h3>
+                <dl class="skills__list">
+
+                    <dt class="skills__list--items--marker skills__list--items">Outils:</dt>
+
+                    <dd class="skills__list--items--marker hard-skill">Trello, Figma, environnement OFFICE</dd>
+                    <dd class="skills__list--items--marker hard-skill">DrawIO, UML, Processing...</dd>
+                    <dd class="skills__list--items--marker hard-skill">Relation client, analyse des besoins, mailing, reporting...</dd>
+                </dl>
+            </section>
+
+            <section class="skills__container">
+                <h3 class="skills__list--items area">Langue :</h3>
+                <dl class="skills__list">
+
+                    <dt class="skills__list--items--marker language skills__list--items">Anglais :</dt>
+
+                    <dd class="skills__list--items--marker hard-skill">Lu, parlé et écrit.</dd>
+                    <dd class="skills__list--items--marker hard-skill">Niveau A2 non officiel.</dd>
+                </dl>
+            </section>
+
+        </article>
+    </main>
+    
+
+    
+    <!-- Activités -->
+    <aside id="activites">
+        <h2 class="about__title">Engagements et activités :</h2>
+        <ul class="about__list">
+            <li class="about__list--items--marker sport">Pratique du hockey sur glace compétitif. (Trophée fédéral)</li>
+            <li class="about__list--items--marker sport">Assistant coach/aide entraîneur au sein du CSGSA Strasbourg Black Stars.</li>
+            <li class="about__list--items--marker sport">Coaching d'une équipe U11 en relève du head-coach.</li>
+            <li class="about__list--items--marker sport">Aide à la préparation et mise en place des entraînements hebdomadaires.</li>
+        </ul>
+    </aside>
+    
+    <!-- Pied de page -->
+    <footer class="footer">
+        <p>&copy; Boyer Laurent année 2025</p>
+    </footer>
+</body>
+</html>

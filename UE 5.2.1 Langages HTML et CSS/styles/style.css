@@ -24,7 +24,11 @@ a{
     font-family: "Alegreya", serif;
     transition: all 0.5s ease;   
 }
-
+.menu__items{
+    position: relative;
+    right: 0;
+    width: 30%;
+}
 .title__container{
    background-color: #ffed94;
 }
@@ -36,13 +40,13 @@ h1{
     padding: 2.5rem 1rem; 
     font-size: 2vw;
 	background: linear-gradient(
-		-45deg, 
-		#4bc0c8 25%, 
-		#feac5e 25%, 
-		#feac5e 50%, 
-		#4bc0c8 50%, 
-		#4bc0c8 75%, 
-		#feac5e 75%, 
+		-45deg,
+		#4bc0c8 25%,
+		#feac5e 25%,
+		#feac5e 50%,
+		#4bc0c8 50%,
+		#4bc0c8 75%,
+		#feac5e 75%,
 		#feac5e);
 	-webkit-background-clip: text;
     background-clip: text;
@@ -72,7 +76,6 @@ h3{
     padding: 1rem 0 0 0;     
 }
 .address__title{
-    
         font-size: 1.1vw;
         font-weight: 400;
         margin-left: 1.5rem;
@@ -116,7 +119,7 @@ h3{
 	0% {
 		opacity: 0;
 		transform: scaleX(0);
-        transform-origin: left 0%;        
+        transform-origin: left 0;
 	}
     25%{
         opacity: 0.25;
@@ -135,42 +138,56 @@ h3{
 	100% {
 		opacity: 1;
 		transform: scaleX(1);
-        transform-origin: 0% right;
+        transform-origin: 0 right;
 	}
 }
 
 .menu{
-    text-align: center;
+
     margin: 1rem;
 }
 .navBar{
-    padding: 1.5rem;
+    width: 55%;
+    position: relative;
+    left: 44%;
+    bottom: 200px;
+    padding: 0.5rem;
     background-color: var(--lightblue);
     border-radius: 1rem;
 }
 .navBar__list{
     list-style:none;
 
+
 }
 .navBar__list--items{
-    font-size: 1.5rem;
-    margin: 1rem;
-    padding: 0.5rem;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0.5rem;
+    padding: 0.25rem;
+    width: 10%;
+    text-align: center;
 }
-.studies, .skills{
+.about {
+    width: 16%;
+}
+.TP1{
+    width: 25%;
+}
+.studies, .skills, .TP{
     background-color: var(--bck-grdColor);
     border-radius: 1rem;
 }
-.studies:hover, .skills:hover{
+.studies:hover, .skills:hover, .TP:hover{
     border: var(--yellow) solid 0.25rem;
     margin: 0.25rem;
     padding: 0.25rem;
 }
-.exp, .about{
+.exp, .about, .TP1{
      border-radius: 1rem;
      background-color: var(--yellow);
 }
-.exp:hover, .about:hover{
+.exp:hover, .about:hover, .TP1:hover{
     border: var(--bck-grdColor) solid 0.25rem;
     margin: 0.25rem;
     padding: 0.25rem;
