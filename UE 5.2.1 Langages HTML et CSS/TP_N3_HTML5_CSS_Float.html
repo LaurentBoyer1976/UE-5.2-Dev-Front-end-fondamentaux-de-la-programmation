@@ -1,265 +1,381 @@
 <!DOCTYPE html>
-    <html lang="fr">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>tutoriel Organisation des contenus et propriétés float et inline-block</title>
-            <meta name="description" content="Page tutoriel sur des l'organisation des éléments HTML et les propriétés float et inline-block">
-            <meta name="author" content="Boyer Laurent">
-            <meta name="keywords" content="HTML, tutoriel, sémantique, CSS, float, inline-block">
-            <link rel="icon" type="image/png" href="https://static.alwaysdata.com/aldjango/img/favicon.png">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund+Guides:wght@100..400&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Bungee+Shade&family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
-            <link rel="preload stylesheet" href="./styles/TP_N3_Style.css" as="style" type="text/css">
-        </head>
-        <body>
-            <header>
-                <h1>TP N3 HTML et CSS: Organisation sémantique du contenu d'une page.<br>Les propriétés Float et Display : inline-block</h1>
-                <nav id="menu">
-                    <ul>
-                        <li><a href="#menu">Menu</a></li>
-                        <li><a href="#float">Propriété: Float</a>
-                                <ol >
-                                    <li><a href="#">Principe et fonctionnement</a></li>
-                                    <li><a href="#">Syntaxe</a></li>
-                                    <li><a href="#">Utilisation</a></li>
-                                    <li><a href="#">Documentation</a></li>
-                                </ol>
-                        </li>
-                        <li><a href="#inlineBlock">Propriété: display à la valeur inline-block</a>
-                                <ol>
-                                    <li><a href="#">Principe et fonctionnement</a></li>
-                                    <li><a href="#">Syntaxe</a></li>
-                                    <li><a href="#">Utilisation</a></li>
-                                    <li><a href="#">Documentation</a></li>
-                                </ol>
-                        </li>
-                        <li><a href="#aside">Organisation sémantique du HTML :</a>
-                            <ol>
-                                <li><a href="#">Principe</a></li>
-                                <li><a href="#">Eléments</a></li>
-                                <li><a href="#">Utilisation</a></li>
-                                <li><a href="#">Documentation</a></li>
-                            </ol>
-                        </li>
-                    </ul>
-                </nav>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tutoriel Organisation des contenus et propriétés float et inline-block</title>
+    <meta name="description" content="Page tutoriel sur des l'organisation des éléments HTML et les propriétés float et inline-block">
+    <meta name="author" content="Boyer Laurent">
+    <meta name="keywords" content="HTML, tutoriel, sémantique, CSS, float, inline-block">
+    <link rel="icon" type="image/png" href="https://static.alwaysdata.com/aldjango/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund+Guides:wght@100..400&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Bungee+Shade&family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/TP_N3_Style.css">
+</head>
+<body>
+<header class="page-header">
+    <span id="pageHeader"><strong>header</strong></span>
+    <span id="H1"><strong>h1</strong></span>
+    <h1 class="page-header__title">TP N3 HTML et CSS: Organisation sémantique du contenu d'une page.<br>Les propriétés Float et Display : inline-block</h1>
+
+    <nav id="menu" class="menu-nav">
+        <span id="nav"><strong>nav</strong></span>
+        <ul class="menu-nav__list">
+            <li class="menu-nav__item">
+                <a href="#float" class="menu-nav__link">Propriété: Float</a>
+                <ol class="menu-nav__sublist">
+                    <li class="menu-nav__subitem"><a href="#float-principe" >Principe et fonctionnement</a></li>
+                    <li class="menu-nav__subitem"><a href="#float-syntaxe" >Syntaxe</a></li>
+                    <li class="menu-nav__subitem"><a href="#float-utilisation" >Utilisation</a></li>
+                    <li class="menu-nav__subitem"><a href="#float-doc" >Documentation</a></li>
+                </ol>
+            </li>
+
+            <li class="menu-nav__item">
+                <a href="#inlineBlock" class="menu-nav__link">Propriété: display à la valeur inline-block</a>
+                <ol class="menu-nav__sublist">
+                    <li class="menu-nav__subitem"><a href="#inline-principe" >Principe et fonctionnement</a></li>
+                    <li class="menu-nav__subitem"><a href="#inline-syntaxe" >Syntaxe</a></li>
+                    <li class="menu-nav__subitem"><a href="#inline-utilisation" >Utilisation</a></li>
+                    <li class="menu-nav__subitem"><a href="#inline-doc" >Documentation</a></li>
+                </ol>
+            </li>
+
+            <li class="menu-nav__item">
+                <a href="#aside-doc" class="menu-nav__link">Organisation sémantique du HTML :</a>
+                <ol class="menu-nav__sublist">
+                    <li class="menu-nav__subitem"><a href="#aside-principe" >Principe</a></li>
+                    <li class="menu-nav__subitem"><a href="#aside-elements" >Eléments</a></li>
+                    <li class="menu-nav__subitem"><a href="#aside-utilisation" >Utilisation</a></li>
+                    <li class="menu-nav__subitem"><a href="#aside-documentation" >Documentation</a></li>
+                </ol>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main-content">
+    <span id="main"><strong>main</strong></span>
+    <article id="float" class="article article--float">
+        <span id="article"><strong>article</strong></span>
+        <header class="article__header">
+            <span id="header"><strong>header</strong></span>
+            <h2 class="article__title">Propriété: Float</h2>
+        </header>
+
+        <section id="float-principe" class="content-section">
+            <span id="section"><strong>section</strong></span>
+            <header class="content-section__header">
+                <h3 class="content-section__title">Principe et fonctionnement</h3>
             </header>
-            <main>
-                <article id="float">
-                    <header>
-                        <h2>Propriété: Float</h2>
-                    </header>
-
-                    <section>
-                        <header>
-                            <h3>Principe et fonctionnement</h3>
-                        </header>
-                        <p>La propriété CSS <code>float</code> indique qu'un élément doit être retiré du flux normal et doit être placé sur le côté droit ou sur le côté gauche de son conteneur.</p>
-                        <p>Le texte et les autres éléments en ligne (inline) entoureront alors l'élément flottant (phénomène appelé habillage).</p>
-                        <p>L'élément est retiré du flux normal de la page, mais reste dans le flux général (contrairement au positionnement absolu).</p>
-                        <aside>
-                            <p>Un élément flottant est un élément pour lequel la valeur calculée de <code>float</code> est différente de <code>none</code>.</p>
-                            <p>Le flottement implique l'utilisation d'une disposition en bloc. Cette propriété modifie donc la valeur de <code>display</code> de certains éléments (un élément qui était <code>inline</code>, par exemple, devient automatiquement <code>block</code> une fois qu'on lui applique un <code>float</code> différent de <code>none</code>).</p>
-                        </aside>
-                    </section>
-
-                    <section>
-                        <header>
-                            <h3>Syntaxe</h3>
-                        </header>
-                        <dl>
-                            <dt>Valeurs avec un mot-clé (Directionnelles)</dt>
-                            <dd><code>float: left;</code></dd>
-                            <dd><code>float: right;</code></dd>
-                            <dd><code>float: none;</code> (Valeur par défaut, non flottant)</dd>
-                        </dl>
-                        <dl>
-                            <dt>Valeurs avec un mot-clé (Logiques)</dt>
-                            <dd><code>float: inline-start;</code> (Démarre du côté du début de la ligne, par défaut <code>left</code>)</dd>
-                            <dd><code>float: inline-end;</code> (Démarre du côté de la fin de la ligne, par défaut <code>right</code>)</dd>
-                        </dl>
-                        <dl>
-                            <dt>Valeurs globales</dt>
-                            <dd><code>float: inherit;</code></dd>
-                            <dd><code>float: initial;</code></dd>
-                            <dd><code>float: revert;</code></dd>
-                            <dd><code>float: revert-layer;</code></dd>
-                            <dd><code>float: unset;</code></dd>
-                        </dl>
-                    </section>
-
-                    <section>
-                        <header>
-                            <h3>Utilisation</h3>
-                        </header>
-                        <p>Lorsqu'un élément est rendu flottant, il est décalé soit vers la gauche, soit vers la droite de son conteneur jusqu'à ce qu'il rencontre le bord de ce conteneur ou un autre élément flottant.</p>
-                        <p>Si plusieurs éléments flottent dans la même direction, ils se positionnent les uns à la suite des autres. S'il n'y a plus d'espace sur la ligne courante, l'élément passe à la ligne suivante.</p>
-
-                        <h4>⚠️ Gestion de l'Effondrement du Conteneur</h4>
-                        <p>
-                            Étant donné qu'un élément flottant est retiré du flux normal, son conteneur parent ne prend plus sa hauteur en compte, ce qui conduit à l'**effondrement** de la boîte du conteneur (si celui-ci ne contient que des flottants).
-                        </p>
-                        <p>
-                            Pour obliger le conteneur parent à englober ses enfants flottants et corriger cet effondrement, on doit créer un nouveau Contexte de Formatage de Bloc (BFC). Les techniques pour cela incluent :
-                        </p>
-                        <ul>
-                            <li>L'application de <code>overflow: hidden;</code> (ou <code>auto</code>) au conteneur.</li>
-                            <li>L'utilisation de la technique historique <code>clearfix</code> via le pseudo-élément <code>::after</code>.</li>
-                            <li>L'utilisation de la valeur moderne <code>display: flow-root;</code> sur le conteneur (solution recommandée en CSS moderne).</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <header>
-                            <h3>Documentation</h3>
-                        </header>
-                        <p>
-                            Pour plus de détails techniques sur la propriété <code>float</code> et ses effets, consultez les ressources suivantes :
-                        </p>
-                        <ul>
-                            <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/Reference/Properties/float" target="_blank">Propriété <code>float</code> sur MDN</a></li>
-                            <li><a href="https://www.w3.org/TR/css-display-3/#flow-root" target="_blank">CSS Display Module Level 3 (pour <code>flow-root</code>)</a></li>
-                        </ul>
-                    </section>
-                </article>
-                <article id="inlineBlock">
-                    <header>
-                        <h2>Propriété: display à la valeur inline-block</h2>
-                    </header>
-                    <section>
-                        <header>
-                            <h3>Principe et fonctionnement</h3>
-                        </header>
-                        <h4>Propriété display:</h4>
-                        <aside>
-                            <p>La propriété CSS display est fondamentale pour déterminer le type de boîte qu'un élément génère (par exemple, un élément de bloc ou en ligne) et comment il organise ses enfants (par exemple, en tant que grille ou boîtes flexibles).</p>
-                            <h5>Ce tutoriel se concentre spécifiquement sur la valeur inline-block, elle combine les caractéristiques suivantes :</h5>
-                            <dl>
-                                <dt>Type d'affichage extérieur (inline) :</dt>
-                                <dd>L'élément est disposé comme un élément en ligne dans le flux (il ne provoque pas de saut de ligne avant et après lui) et s'aligne horizontalement avec le texte ou d'autres éléments en ligne/inline-block.</dd>
-                                <dt>Type d'affichage intérieur (block) :</dt>
-                                <dd>Le contenu à l'intérieur de l'élément est formaté comme une boîte de bloc, permettant de définir des largeurs (width), des hauteurs (height), ainsi que des marges verticales (margin-top, margin-bottom) qui sont ignorées par les éléments purement en ligne.</dd>
-                            </dl>
-                        </aside>
-                        <h4>display-legacy (Contexte Historique) :</h4>
-                        <p> CSS 2 utilise une syntaxe avec un seul mot-clé pour la propriété display et il faut donc des mots-clés distincts pour les variantes bloc/en ligne d'un même mode de disposition.</p>
-                        <h5>inline-block:</h5>
-                        <p>L'élément s'inscrit dans le contenu environnant comme une boîte en ligne et organise son propre contenu en bloc.</p>
-                        <p>Ce mot-clé est équivalent à la combinaison <code>inline flow-root</code> dans la syntaxe modulaire.</p>
-                    </section>
-
-                    <section>
-                        <header>
-                            <h3>Syntaxe</h3>
-                        </header>
-                        <dl>
-                            <dt>Valeur Unique (Legacy CSS2)</dt>
-                            <dd><code>display: inline-block;</code></dd>
-
-                            <dt>Équivalence Modulaire (CSS 3/4)</dt>
-                            <dd><code>display: inline flow-root;</code></dd>
-                        </dl>
-                        <aside>
-                            <p>
-                                Note sur l'équivalence : La syntaxe <code>inline flow-root</code> est la façon moderne et explicite de décrire <code>inline-block</code>. Le mot-clé <code>flow-root</code> est crucial, car il indique que l'élément doit créer un Contexte de Formatage de Bloc (BFC), assurant notamment que l'élément contienne correctement tous ses enfants flottants.
-                            </p>
-                        </aside>
-                    </section>
-
-                    <section>
-                        <header>
-                            <h3>Utilisation</h3>
-                        </header>
-                        <p>
-                            <code>display: inline-block;</code> est souvent utilisé dans les scénarios avec lesquels nous souhaitons combiner les avantages des éléments en ligne et en bloc.
-                        </p>
-                        <ul>
-                            <li>
-                                Menus de Navigation Horizontaux : Permet de placer les éléments de liste (<code>&lt;li&gt;</code>) côte à côte tout en permettant de définir des marges, des rembourrages (padding) et des dimensions précises pour les zones de clic.
-                            </li>
-                            <li>
-                                Contrôles de Formulaire et Icônes : Idéal pour positionner des icônes ou des champs de formulaire à côté d'un texte, tout en leur appliquant des dimensions ou des marges verticales que les éléments purement <code>inline</code> ignoreraient.
-                            </li>
-                            <li>
-                                Mises en Page Colonnes Simples (Historique) : Avant l'adoption généralisée de Flexbox et Grid, <code>inline-block</code> était une technique courante, bien que parfois complexe à gérer (problèmes d'espacement entre les éléments, nécessitant l'ajustement de <code>font-size</code>).
-                            </li>
-                        </ul>
-                        <div class="exemple">
-                            <h4>Exemple d'application dans un menu :</h4>
-                            <p>Appliquer <code>display: inline-block;</code> aux éléments <code>&lt;li&gt;</code> pour les aligner horizontalement et leur donner une hauteur :</p>
-                            <code>li { display: inline-block; padding: 10px; margin-right: 5px; height: 30px; }</code>
-                        </div>
-                    </section>
-
-                    <section>
-                        <header>
-                            <h3>Documentation</h3>
-                        </header>
-                        <p>
-                            Pour une information complète et à jour sur les types d'affichage CSS, veuillez consulter les ressources officielles :
-                        </p>
-                        <ul>
-                            <li>
-                                Mozilla Developer Network (MDN) :
-                                <ul>
-                                    <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/display" target="_blank">Propriété <code>display</code></a></li>
-                                    <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/display-box" target="_blank">Référence sur les Valeurs <code>display</code></a> (incluant le modèle modulaire)</li>
-                                </ul>
-                            </li>
-                            <li>
-                                W3C/Spécification CSS :
-                                <ul>
-                                    <li><a href="https://www.w3.org/TR/css-display-3/" target="_blank">CSS Display Module Level 3</a> (pour la syntaxe modulaire et <code>flow-root</code>)</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </section>
-                </article>
-            </main>
-            <aside id="aside">
-                    <article>
-                    <header>
-                        <span>aside</span>
-                        <h2>Organisation sémantique du HTML</h2>
-                    </header>
-                    <section>
-                        <header>
-                            <h3>Principe</h3>
-                        </header>
-                            <h4>Définition : Sémantique</h4>
-                                <p>Le mot sémantique signifie "qui concerne le sens ou la signification".</p>
-                                <p>Le HTML sémantique (ou balisage sémantique) est l'utilisation de balises HTML qui transmettent la signification et le rôle du contenu qu'elles contiennent, fournissant ainsi des informations supplémentaires sur l'importance relative des différentes parties de la page.</p>
-                                <dl>
-                                    <dt>HTML Sémantique (Exemple :  header, article, footer ) :</dt>
-                                        <dd>Ces balises définissent clairement le type de contenu qu'elles englobent.</dd>
-                                    <dt>HTML Non Sémantique (Exemple : div, span) : :</dt>
-                                        <dd>Ces balises n'ont pas de signification intrinsèque et ne véhiculent pas directement de sens.</dd>
-                                </dl>
-                            <p>L'objectif principal est d'aider les machines (moteurs de recherche, technologies d'assistance) à comprendre et à interpréter la structure et la hiérarchie de votre contenu (notamment en SEO on-page).</p>
-                            <img src="./assets/SemanticSearchNonSemantic.svg"/>
-                    </section>
-                    <section>
-                        <header>
-                            <h3>Eléments</h3>
-                        </header>
-
-                    </section>
-                    <section>
-                        <header>
-                            <h3>Utilisation</h3>
-                        </header>
-
-                    </section>
-                    <section>
-                        <header>
-                            <h3>Documentation</h3>
-                        </header>
-
-                    </section>
-                </article>
+            <p>La propriété CSS <code class="content-section__code">float</code> indique qu'un élément doit être retiré du flux normal et doit être placé sur le côté droit ou sur le côté gauche de son conteneur.</p>
+            <p>Le texte et les autres éléments en ligne (inline) entoureront alors l'élément flottant (phénomène appelé habillage).</p>
+            <p>L'élément est retiré du flux normal de la page, mais reste dans le flux général (contrairement au positionnement absolu).</p>
+            <aside class="content-section__aside">
+                <span id="aside"><strong>aside</strong></span>
+                <p>Un élément flottant est un élément pour lequel la valeur calculée de <code>float</code> est différente de <code>none</code>.</p>
+                <p>Le flottement implique l'utilisation d'une disposition en bloc. Cette propriété modifie donc la valeur de <code>display</code> de certains éléments (un élément qui était <code>inline</code>, par exemple, devient automatiquement <code>block</code> une fois qu'on lui applique un <code>float</code> différent de <code>none</code>).</p>
             </aside>
-            <footer></footer>
-        </body>
-    </html>
+        </section>
+
+        <section id="float-syntaxe" class="content-section">
+            <header class="content-section__header">
+                <h3 class="content-section__title">Syntaxe</h3>
+            </header>
+            <dl class="content-section__list">
+                <dt>Valeurs avec un mot-clé (Directionnelles)</dt>
+                <dd><code class="content-section__code">float: left;</code></dd>
+                <dd><code class="content-section__code">float: right;</code></dd>
+                <dd><code class="content-section__code">float: none;</code> (Valeur par défaut, non flottant)</dd>
+            </dl>
+            <dl class="content-section__list">
+                <dt>Valeurs avec un mot-clé (Logiques)</dt>
+                <dd><code class="content-section__code">float: inline-start;</code> (Démarre du côté du début de la ligne, par défaut <code>left</code>)</dd>
+                <dd><code class="content-section__code">float: inline-end;</code> (Démarre du côté de la fin de la ligne, par défaut <code>right</code>)</dd>
+            </dl>
+            <dl class="content-section__list">
+                <dt>Valeurs globales</dt>
+                <dd><code class="content-section__code">float: inherit;</code></dd>
+                <dd><code class="content-section__code">float: initial;</code></dd>
+                <dd><code class="content-section__code">float: revert;</code></dd>
+                <dd><code class="content-section__code">float: revert-layer;</code></dd>
+                <dd><code class="content-section__code">float: unset;</code></dd>
+            </dl>
+        </section>
+
+        <section id="float-utilisation" class="content-section">
+            <header class="content-section__header">
+                <h3 class="content-section__title">Utilisation</h3>
+            </header>
+            <p>Lorsqu'un élément est rendu flottant, il est décalé soit vers la gauche, soit vers la droite de son conteneur jusqu'à ce qu'il rencontre le bord de ce conteneur ou un autre élément flottant.</p>
+            <p>Si plusieurs éléments flottent dans la même direction, ils se positionnent les uns à la suite des autres. S'il n'y a plus d'espace sur la ligne courante, l'élément passe à la ligne suivante.</p>
+
+            <h4>Gestion de l'Effondrement du Conteneur</h4>
+            <p>
+                Étant donné qu'un élément flottant est retiré du flux normal, son conteneur parent ne prend plus sa hauteur en compte, ce qui conduit à l'effondrement de la boîte du conteneur (si celui-ci ne contient que des flottants).
+            </p>
+            <p>
+                Pour obliger le conteneur parent à englober ses enfants flottants et corriger cet effondrement, on doit créer un nouveau Contexte de Formatage de Bloc (BFC). Les techniques pour cela incluent :
+            </p>
+            <ul>
+                <li>L'application de <code class="content-section__code">overflow: hidden;</code> (ou <code>auto</code>) au conteneur.</li>
+                <li>L'utilisation de la technique historique <code class="content-section__code">clearfix</code> via le pseudo-élément <code>::after</code>.</li>
+                <li>L'utilisation de la valeur moderne <code class="content-section__code">display: flow-root;</code> sur le conteneur (solution recommandée en CSS moderne).</li>
+            </ul>
+        </section>
+
+        <section id="float-doc" class="content-section">
+            <header class="content-section__header">
+                <h3 class="content-section__title">Documentation</h3>
+            </header>
+            <p>
+                Pour plus de détails techniques sur la propriété <code class="content-section__code">float</code> et ses effets, consultez les ressources suivantes :
+            </p>
+            <ul class="content-section__list">
+                <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/Reference/Properties/float" target="_blank" rel="noopener noreferrer" class="link link--content">Propriété <code>float</code> sur MDN</a></li>
+                <li><a href="https://www.w3.org/TR/css-display-3/#flow-root" target="_blank" rel="noopener noreferrer" class="link link--content">CSS Display Module Level 3 (pour <code>flow-root</code>)</a></li>
+            </ul>
+        </section>
+    </article>
+    <article id="inlineBlock" class="article article--inline-block">
+        <header class="article__header">
+            <span id="header"><strong>header</strong></span>
+            <h2 class="article__title">Propriété: display à la valeur inline-block</h2>
+        </header>
+        <section id="inline-principe" class="content-section">
+            <header class="content-section__header">
+                <h3 class="content-section__title">Principe et fonctionnement</h3>
+            </header>
+            <h4>Propriété display:</h4>
+
+            <h4>display-legacy (Contexte Historique) :</h4>
+            <p> CSS 2 utilise une syntaxe avec un seul mot-clé pour la propriété display et il faut donc des mots-clés distincts pour les variantes bloc/en ligne d'un même mode de disposition.</p>
+            <h5>inline-block:</h5>
+            <p>L'élément s'inscrit dans le contenu environnant comme une boîte en ligne et organise son propre contenu en bloc.</p>
+            <p>Ce mot-clé est équivalent à la combinaison <code class="content-section__code">inline flow-root</code> dans la syntaxe modulaire.</p>
+            <aside id="aside--display" class="content-section__aside">
+                <p>La propriété CSS display est fondamentale pour déterminer le type de boîte qu'un élément génère (par exemple, un élément de bloc ou en ligne) et comment il organise ses enfants (par exemple, en tant que grille ou boîtes flexibles).</p>
+                <h5>Ce tutoriel se concentre spécifiquement sur la valeur inline-block, elle combine les caractéristiques suivantes :</h5>
+                <dl class="content-section__list">
+                    <dt>Type d'affichage extérieur (inline) :</dt>
+                    <dd>L'élément est disposé comme un élément en ligne dans le flux (il ne provoque pas de saut de ligne avant et après lui) et s'aligne horizontalement avec le texte ou d'autres éléments en ligne/inline-block.</dd>
+                    <dt>Type d'affichage intérieur (block) :</dt>
+                    <dd>Le contenu à l'intérieur de l'élément est formaté comme une boîte de bloc, permettant de définir des largeurs (width), des hauteurs (height), ainsi que des marges verticales (margin-top, margin-bottom) qui sont ignorées par les éléments purement en ligne.</dd>
+                </dl>
+            </aside>
+        </section>
+
+        <section id="inline-syntaxe" class="content-section">
+            <header class="content-section__header">
+                <h3 class="content-section__title">Syntaxe</h3>
+            </header>
+            <dl class="content-section__list">
+                <dt>Valeur Unique (Legacy CSS2)</dt>
+                <dd><pre><code class="content-section__code">display: inline-block;</code></pre></dd>
+
+                <dt>Équivalence Modulaire (CSS 3/4)</dt>
+                <dd><pre><code class="content-section__code">display: inline flow-root;</code></pre></dd>
+            </dl>
+            <aside class="content-section__aside">
+                <p>
+                    Note sur l'équivalence : La syntaxe <code class="content-section__code">inline flow-root</code> est la façon moderne et explicite de décrire <code>inline-block</code>. Le mot-clé <code>flow-root</code> est crucial, car il indique que l'élément doit créer un Contexte de Formatage de Bloc (BFC), assurant notamment que l'élément contienne correctement tous ses enfants flottants.
+                </p>
+            </aside>
+        </section>
+
+        <section id="inline-utilisation" class="content-section">
+            <header class="content-section__header">
+                <h3 class="content-section__title">Utilisation</h3>
+            </header>
+            <p>
+                <code class="content-section__code">display: inline-block;</code> est souvent utilisé dans les scénarios avec lesquels nous souhaitons combiner les avantages des éléments en ligne et en bloc.
+            </p>
+            <ul class="content-section__list">
+                <li>
+                    Menus de Navigation Horizontaux : Permet de placer les éléments de liste (<code>&lt;li&gt;</code>) côte à côte tout en permettant de définir des marges, des rembourrages (padding) et des dimensions précises pour les zones de clic.
+                </li>
+                <li>
+                    Contrôles de Formulaire et Icônes : Idéal pour positionner des icônes ou des champs de formulaire à côté d'un texte, tout en leur appliquant des dimensions ou des marges verticales que les éléments purement <code>inline</code> ignoreraient.
+                </li>
+                <li>
+                    Mises en Page Colonnes Simples (Historique) : Avant l'adoption généralisée de Flexbox et Grid, <code>inline-block</code> était une technique courante, bien que parfois complexe à gérer (problèmes d'espacement entre les éléments, nécessitant l'ajustement de <code>font-size</code>).
+                </li>
+            </ul>
+            <div class="exemple">
+                <h4>Exemple d'application dans un menu :</h4>
+                <p>Appliquer <code class="content-section__code">display: inline-block;</code> aux éléments <code>&lt;li&gt;</code> pour les aligner horizontalement et leur donner une hauteur :</p>
+                <code class="content-section__code">li { display: inline-block; padding: 10px; margin-right: 5px; height: 30px; }</code>
+            </div>
+        </section>
+
+        <section id="inline-doc" class="content-section">
+            <header class="content-section__header">
+                <h3 class="content-section__title">Documentation</h3>
+            </header>
+            <p>
+                Pour une information complète et à jour sur les types d'affichage CSS, veuillez consulter les ressources officielles :
+            </p>
+            <ul class="content-section__list">
+                <li>
+                    Mozilla Developer Network (MDN) :
+                    <ul class="content-section__sublist">
+                        <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/display" target="_blank" rel="noopener noreferrer" class="link link--content">Propriété <code>display</code></a></li>
+                        <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/display-box" target="_blank" rel="noopener noreferrer" class="link link--content">Référence sur les Valeurs <code>display</code></a> (incluant le modèle modulaire)</li>
+                    </ul>
+                </li>
+                <li>
+                    W3C/Spécification CSS :
+                    <ul class="content-section__sublist">
+                        <li><a href="https://www.w3.org/TR/css-display-3/" target="_blank" rel="noopener noreferrer" class="link link--content">CSS Display Module Level 3</a> (pour la syntaxe modulaire et <code>flow-root</code>)</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </article>
+    <article id="aside-doc" class="aside-panel">
+        <span id="aside-article"><strong>article</strong></span>
+        <header class="aside-panel__header">
+            <h2 class="aside-panel__title">Organisation sémantique du HTML</h2>
+        </header>
+            <section id="aside-principe" class="aside-section">
+                <span id="aside-section"><strong>section</strong></span>
+                <header class="aside-section__header">
+                    <h3 class="aside-section__title">Principe</h3>
+                </header>
+                <h4>Définition : Sémantique</h4>
+                <p>Le mot sémantique signifie "qui concerne le sens ou la signification".</p>
+                <p>Le HTML sémantique (ou balisage sémantique) est l'utilisation de balises HTML qui transmettent la signification et le rôle du contenu qu'elles contiennent, fournissant ainsi des informations supplémentaires sur l'importance relative des différentes parties de la page.</p>
+                <dl class="aside-section__list">
+                    <dt>HTML Sémantique (Exemple :  &lt;header&gt;, &lt;article&gt;, &lt;footer&gt;) :</dt>
+                    <dd>Ces balises définissent clairement le type de contenu qu'elles englobent.</dd>
+                    <dt>HTML Non Sémantique (Exemple : &lt;div&gt;, &lt;span&gt;) : :</dt>
+                    <dd>Ces balises n'ont pas de signification intrinsèque et ne véhiculent pas directement de sens.</dd>
+                </dl>
+                <p>L'objectif principal est d'aider les machines (moteurs de recherche, technologies d'assistance) à comprendre et à interpréter la structure et la hiérarchie de votre contenu (notamment en SEO on-page).</p>
+                <aside id="aside-svg" class="aside-svg">
+                    <span id="aside-img"><strong>aside</strong></span>
+                    <img src="./assets/SemanticSearchNonSemantic.svg" alt="exemple visuel de html sémantique et non sémantique" class="image__content">
+                </aside>
+            </section>
+            <section id="aside-elements" class="aside-section">
+                <header class="aside-section__header">
+                    <h3 class="aside-section__title">Eléments</h3>
+                </header>
+                <dl class="aside-section__list">
+                    <dt>main</dt>
+                    <dd>L'élément HTML &lt;main&gt; représente le contenu majoritaire du &lt;body&gt; du document.</dd>
+                    <dd>Le contenu principal de la zone est constitué de contenu directement en relation, ou qui étend le sujet principal du document ou de la fonctionnalité principale d'une application.</dd>
+                    <dd>Un document ne peut pas avoir plus d'un seul élément &lt;main&gt; sans attribut hidden.</dd>
+                    <dt>header</dt>
+                    <dd>L'élément HTML &lt;header&gt; représente du contenu introductif, généralement un groupe de contenu introductif ou de contenu aidant à la navigation.</dd>
+                    <dd>Il peut contenir des éléments de titre, mais aussi d'autres éléments tels qu'un logo, un formulaire de recherche, le nom d'auteur, etc.</dd>
+                    <dt>nav</dt>
+                    <dd>L'élément HTML &lt;nav&gt; représente une section d'une page ayant des liens vers d'autres pages ou des fragments de cette page.</dd>
+                    <dd>Autrement dit, c'est une section destinée à la navigation dans un document (avec des menus, des tables des matières, des index, etc.).</dd>
+                    <dt>article</dt>
+                    <dd>L'élément &lt;article&gt; représente une composition autonome dans un document, une page, une application ou un site, destinée à être distribuée ou réutilisée de manière indépendante (par exemple, dans le cadre d'une syndication).</dd>
+                    <dd>Exemples : un message de forum, un article de magazine ou de journal, ou un article de blog, une fiche produit, un commentaire soumis par un utilisateur, un widget ou gadget interactif, ou tout autre élément de contenu indépendant.</dd>
+                    <dt>section</dt>
+                    <dd>L'élément HTML &lt;section&gt; représente une section générique d'un document, par exemple un groupe de contenu thématique.</dd>
+                    <dd>Une section commence généralement avec un titre.</dd>
+                    <dt>aside</dt>
+                    <dd>L'élément &lt;aside&gt; (en français, « aparté ») représente une partie d'un document dont le contenu n'a qu'un rapport indirect avec le contenu principal du document.</dd>
+                    <dd>Les apartés sont fréquemment présents sous la forme d'encadrés ou de boîtes de légende.</dd>
+                    <dt>footer</dt>
+                    <dd>L'élément HTML &lt;footer&gt; représente le pied de page de la section ou de la racine de sectionnement la plus proche.</dd>
+                    <dd>Un élément &lt;footer&gt; contient habituellement des informations sur l'autrice ou l'auteur de la section, les données relatives au droit d'auteur (copyright) ou les liens vers d'autres documents en relation.</dd>
+                </dl>
+            </section>
+            <section id="aside-utilisation" class="aside-section">
+                <header class="aside-section__header">
+                    <h3 class="aside-section__title">Utilisation</h3>
+                </header>
+                <ul class="aside-section__list">
+                    <li><a href="#main" class="link link--content">&lt;main&gt;</a></li>
+                    <li><a href="#pageHeader" class="link link--content">&lt;header&gt;</a></li>
+                    <li><a href="#nav" class="link link--content">&lt;nav&gt;</a></li>
+                    <li><a href="#article" class="link link--content">&lt;article&gt;</a></li>
+                    <li><a href="#section" class="link link--content">&lt;section&gt;</a></li>
+                    <li><a href="#header" class="link link--content">&lt;header&gt; dans &lt;section&gt; </a></li>
+                    <li><a href="#aside" class="link link--content">&lt;aside&gt; dans &lt;section&gt;</a></li>
+                    <li><a href="#aside-doc" class="link link--content">&lt;aside&gt;</a></li>
+                    <li><a href="#aside-article" class="link link--content">&lt;article&gt; dans &lt;aside&gt;</a></li>
+                    <li><a href="#aside-section" class="link link--content">&lt;section&gt; dans &lt;aside&gt;</a></li>
+                    <li><a href="#footer" class="link link--content">&lt;footer&gt;</a></li>
+                </ul>
+                <aside class="aside-section__code-block">
+                    <span id="aside-code"><strong>aside</strong></span>
+                    <h4 class="aside-section__code-title">Architecture de la page :</h4>
+                    <pre id="code">
+                <code class="aside-section__code">
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="fr"&gt;
+                &lt;head&gt;
+                    ... (Métadonnées, liens CSS)
+                &lt;/head&gt;
+                &lt;body&gt;
+
+                    &lt;header&gt;
+                        &lt;h1&gt;...&lt;/h1&gt;
+                        &lt;nav id="menu"&gt;...&lt;/nav&gt;
+                    &lt;/header&gt;
+
+                    &lt;main&gt;
+                        &lt;!-- Colonne principale --&gt;
+                        &lt;article id="float"&gt;
+                            &lt;section&gt; ...&lt;/section&gt;
+                        &lt;/article&gt;
+                        &lt;article id="inlineBlock"&gt;...&lt;/article&gt;
+                    &lt;/main&gt;
+
+                    &lt;aside id="aside"&gt;
+                        &lt;!-- Colonne latérale --&gt;
+                        &lt;article&gt;...&lt;/article&gt;
+                    &lt;/aside&gt;
+
+                    &lt;footer&gt;
+                        ...
+                    &lt;/footer&gt;
+
+                &lt;/body&gt;
+            &lt;/html&gt;
+                </code>
+            </pre>
+                </aside>
+            </section>
+            <section id="aside-documentation" class="aside-section">
+                <header class="aside-section__header">
+                    <h3 class="aside-section__title">Documentation</h3>
+                </header>
+                <p>
+                    Pour approfondir la sémantique HTML5 et l'utilisation correcte des éléments de section :
+                </p>
+                <ul class="aside-section__list">
+                    <li>
+                        <strong>Référence MDN (Mozilla Developer Network) :</strong>
+                        <ul class="aside-section__sublist">
+                            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/aside" target="_blank" rel="noopener noreferrer" class="link link--content">Élément <code>&lt;aside&gt;</code></a></li>
+                                <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/main" target="_blank" rel="noopener noreferrer" class="link link--content">Élément <code>&lt;main&gt;</code></a></li>
+                                <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/section" target="_blank" rel="noopener noreferrer" class="link link--content">Élément <code>&lt;section&gt;</code></a></li>
+                                <li><a href="https://developer.mozilla.org/fr/docs/Glossary/Semantics" target="_blank" rel="noopener noreferrer" class="link link--content">Glossaire : Sémantique</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>W3C (Spécification) :</strong>
+                        <ul class="aside-section__sublist">
+                            <li><a href="https://www.w3.org/TR/html52/sections.html#the-aside-element" target="_blank" rel="noopener noreferrer" class="link link--content">HTML 5.2 : The aside element</a> (Documentation de la spécification officielle)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+    </article>
+</main>
+
+
+<footer  class="page-footer">
+    <span id="footer"><strong>footer</strong></span>
+    <small class="page-footer__copy">Boyer laurent TP N3 UE 5.2 LP-DWCA session 2025/2026</small>
+</footer>
+</body>
+</html>
