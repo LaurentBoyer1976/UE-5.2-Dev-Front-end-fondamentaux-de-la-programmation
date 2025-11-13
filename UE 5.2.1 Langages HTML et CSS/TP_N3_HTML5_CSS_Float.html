@@ -12,327 +12,75 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund+Guides:wght@100..400&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Bungee+Shade&family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Nettoyage : CSS centralisé pour notation (float / inline-block) */
         *{
             margin: 0;
             padding: 0;
             font-family: 'Alegreya', 'Bungee Shade', cursive, sans-serif;
             box-sizing: border-box;
         }
-        a{
-            text-decoration: none;
-        }
-        ul{
-            list-style: none;
-        }
-        img{
-            width: 150px;
-            height: 150px;
-        }
-        /*header styles*/
-        #spanNav{
-            position: relative;
-            right: 20px;
-            background-color: #EEBB88;
-            border: 2px solid #88EE88;
-            border-radius: 25px;
-            padding: 5px;
-        }
-        #H1 {
-            position: relative;
-            right: 20px;
-            top: 35px;
-            background-color: #EEBB88;
-            border: 2px solid #88EE88;
-            border-radius: 25px;
-            padding: 5px;
-        }
-        #pageHeader{
-            position: relative;
-            bottom: 5px;
-            background-color: #EEBB88;
-            border: 2px solid #88EE88;
-            border-radius: 25px;
-            padding: 5px;
-        }
-        #header{
-            border: #88EE88 solid 1px;
-            background-color: #EE88EE;
-            padding: 10px;
-        }
-        .page-header__title{
-            text-align: center;
-            padding: 45px 50px;
-            border: #88EE88 solid 1px;
-            background-color: #88BBEE;
-            margin-bottom: 25px;
-            border-radius: 25px;
-        }
-        .menu-nav{
-            display: inline-block;
-            margin:0 auto 25px auto;
-            padding: 25px;
-            width: 100%;
-            border: #88EE88 solid 1px;
-            background-color: #88BBEE;
-            border-radius: 25px;
-            box-sizing: border-box;
-        }
-        .menu-nav__item{
-            display: inline-block;
-            padding: 10px 15px;
-        }
-        .menu-nav__link{
-            padding: 10px;
-        }
-        .menu-nav__sublist{
-            padding: 10px 15px;
-        }
-        .menu-nav__subitem{
-            display: inline-block;
-            padding: 10px 15px;
-        }
+        a{ text-decoration: none; }
+        ul{ list-style: none; }
+        img{ width: 150px; height: 150px; }
 
-        /*Main styles*/
-        .main-content{
-            padding: 50px;
-            border: 2px dashed #88EE88;
-            display: flow-root;
-            background-color: #EEBB88;
-        }
-        #spanMain{
-            position: relative;
-            bottom: 40px;
-            right: 30px;
-        }
-        #spanSection{
-            position: relative;
-            bottom: 20px;
-            right: 30px;
-        }
-        #spanAside{
-            position: relative;
-            right: 30px;
-            background-color: #88BBEE;
-            border: 2px solid #88EE88;
-            border-radius: 25px;
-            padding: 5px;
-        }
-        #spanHeader, #headerFloat{
-            position: relative;
-            bottom: 20px;
-            right: 300px;
-            background-color: #88BBEE;
-            border: 2px solid #88EE88;
-            border-radius: 25px;
-            padding: 10px;
-        }
-        #spanArticle{
-            position: relative;
-            bottom: 10px;
-            right: 0;
-            background-color: #EEBB88;
-            border: 2px solid #88EE88;
-            border-radius: 25px;
-            padding: 5px;
-        }
-        #spanSection, #spanMain{
-            background-color: #88BBEE;
-            border: 2px solid #88EE88;
-            border-radius: 25px;
-            padding: 10px;
-        }
-        .article{
-            width: 45%;
-        }
-        .article__header{
-            text-align: center;
-            padding: 50px;
-            margin-bottom: 50px;
-            border-radius: 15px;
-            border: solid 2px #88EE88;
-            background-color: #eb8220;
-        }
-        .article--float, .article--inline-block{
-            float: left;
-            padding:20px;
-            border: #88EE88 1px solid;
-            border-radius: 10px;
-            background-color: #88BBEE;
-        }
-        #aside--display{
-            position: relative;
-            top: 0;
-        }
-        .article--inline-block{
-            float: right;
-        }
-        .content-section{
-            width: 40%;
-            padding: 10px 10px;
-            margin: 20px;
-            border-radius: 10px;
-            background-color: #EEBB88;
-        }
-        #float-principe,#float-doc, #inline-principe,#inline-doc, #aside-elements, #main{
-            float: left;
-        }
-        #float-principe,#float-doc, #inline-principe,#inline-doc, #aside-elements, #main{
-            float: left;
-        }
-        #float-syntaxe, #float-utilisation, #inline-syntaxe, #inline-utilisation, #aside-elements{
-            float: right;
-        }
-        #float-syntaxe, #float-utilisation, #inline-syntaxe, #inline-utilisation, #aside-elements{
-            float: right;
-        }
-        .content-section__aside{
-            position: relative;
-            top: 40px;
-            left: 20px;
-            padding: 10px;
-            border: #88EE88 1px solid;
-            border-radius: 10px;
-            background-color: #88BBEE;
-            box-shadow: 2px 2px 2px #88EE88 ;
-        }
-        /*aside style*/
+        /* Header */
+        #pageHeader{ position: relative; bottom: 5px; background-color: #EEBB88; border: 2px solid #88EE88; border-radius: 25px; padding: 5px; }
+        .page-header__title{ text-align: center; padding: 45px 50px; border: 2px solid #88EE88; background-color: #88BBEE; margin-bottom: 25px; border-radius: 25px; }
+        .menu-nav{ display: inline-block; margin:0 auto 25px auto; padding: 25px; width: 100%; border: 2px solid #88EE88; background-color: #88BBEE; border-radius: 25px; box-sizing: border-box; }
+        .menu-nav__item{ display: inline-block; padding: 10px 15px; }
 
-        .aside-panel{
-            display: inline-block;
-            border: #88EE88 1px solid;
-            background-color: #EEEE88;
-            border-radius: 10px;
-        }
-        .aside-panel__header{
-            text-align: center;
-            border-radius: 10px;
-            background-color: #88BBEE;
-            box-shadow: 2px 2px 2px #88EE88 ;
-            padding: 25px;
-            width: 50%;
-            margin: 20px auto;
-        }
-        #aside-principe, #aside-utilisation, #aside-documentation{
-            float: left;
-            width: 40%;
-            background-color: #88BBEE;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px;
-        }
+        /* Main / layout */
+        .main-content{ padding: 50px; border: 2px dashed #88EE88; display: flow-root; background-color: #EEBB88; }
+    /* labels décoratifs (spans) - converted to classes to avoid being link anchors */
+    .span-label { display: inline-block; background-color: #88BBEE; border: 2px solid #88EE88; border-radius: 25px; padding: 5px 10px; margin-bottom: 8px; }
+    /* positionnements spécifiques pour labels historiques (conservent le rendu précédent) */
+    .span-H1 { position: relative; right: 20px; top: 35px; }
+    .span-pageHeader { position: relative; bottom: 5px; }
 
-        #aside-principe, #aside-utilisation, #aside-documentation{
-            float: left;
-            width: 40%;
-            background-color: #88BBEE;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px;
-        }
-        #aside-documentation{
-            position: relative;
-            z-index: 10;
-            width: 35%;
-        }
-        #aside-elements{
-            float: right;
-            width: 40%;
-            background-color: #88BBEE;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px;
-        }
-        #aside-svg{
-            position: absolute;
-            width: 14%;
-            top: 230%;
-            left: 40%;
-        }
-        .image__content{
-            width: 100%;
-            height: 100%;
-            background-color: #EEBB88;
-            border: 2px solid #88EE88;
-            border-radius: 25px;
-            padding: 25px;
-            box-shadow: 2px 2px 2px #88EE88 ;
-        }
-        #aside-img{
-            position: relative;
-            top: 25px;
-            left: 100px;
-            background-color: #88BBEE;
-            border: 2px solid #88EE88;
-            border-radius: 25px;
-            padding: 5px;
-        }
-        #aside-code{
-            position: relative;
-            bottom: 10px;
-            left: 20px;
-            background-color: #88BBEE;
-            border: 2px solid #88EE88;
-            border-radius: 25px;
-            padding: 5px;
-        }
-        .aside-section__code-block{
-            position: absolute;
-            left: 35%;
-            top: 268%;
-            width: 20%;
-            height: 70%;
-            background-color: #EEBB88;
-            border: 2px solid #88EE88;
-            border-radius: 25px;
-            padding: 25px;
-            z-index: 1;
-        }
-        #code{
-            height: 100%;
-            box-sizing: border-box;
-        }
+        .article{ width: 45%; }
+        .article__header{ text-align: center; padding: 50px; margin-bottom: 50px; border-radius: 15px; border: solid 2px #88EE88; background-color: #eb8220; }
+        .article--float{ float: left; padding:20px; border: 1px solid #88EE88; border-radius: 10px; background-color: #88BBEE; }
+        .article--inline-block{ float: right; padding:20px; border: 1px solid #88EE88; border-radius: 10px; background-color: #88BBEE; }
 
-        .aside-section__code{
-            font-size: small;
-            position: absolute;
-        }
-        #aside-article{
-            position: relative;
-            top: 40px;
-            background-color: #EEBB88;
-            border: 2px solid #88EE88;
-            border-radius: 25px;
-            padding: 5px;
-        }
-        #aside-section{
-            position: relative;
-            background-color: #EEBB88;
-            border: 2px solid #88EE88;
-            border-radius: 25px;
-            padding: 5px;
-        }
-        .page-footer{
-            text-align: center;
-            border: #88EE88 solid 1px;
-            background-color: #EE88EE;
-            padding: 10px;
-        }
-        #footer{
-            background-color: #EEBB88;
-            border: 2px solid #88EE88;
-            border-radius: 25px;
-            padding: 5px;
-        }
+        .content-section{ width: 40%; padding: 10px; margin: 20px; border-radius: 10px; background-color: #EEBB88; }
+
+        /* Positionnement des sous-sections (une seule définition, pas de duplicata) */
+        #float-principe, #float-doc, #inline-principe, #inline-doc, #aside-elements { float: left; }
+        #float-syntaxe, #float-utilisation, #inline-syntaxe, #inline-utilisation { float: right; }
+
+        .content-section__aside{ position: relative; top: 40px; left: 20px; padding: 10px; border: 1px solid #88EE88; border-radius: 10px; background-color: #88BBEE; box-shadow: 2px 2px 2px #88EE88; }
+
+        /* aside */
+        .aside-panel{ display: inline-block; border: 1px solid #88EE88; background-color: #EEEE88; border-radius: 10px; }
+        .aside-panel__header{ text-align: center; border-radius: 10px; background-color: #88BBEE; box-shadow: 2px 2px 2px #88EE88; padding: 25px; width: 50%; margin: 20px auto; }
+        #aside-principe, #aside-utilisation, #aside-documentation{ float: left; width: 40%; background-color: #88BBEE; padding: 15px; border-radius: 10px; margin: 20px; }
+        #aside-documentation{ position: relative; z-index: 10; width: 35%; }
+        #aside-elements{ float: right; width: 40%; background-color: #88BBEE; padding: 15px; border-radius: 10px; margin: 20px; }
+
+        #aside-svg{ position: absolute; width: 14%; top: 245%; left: 40%; }
+        .image__content{ width: 100%; height: 100%; background-color: #EEBB88; border: 2px solid #88EE88; border-radius: 25px; padding: 25px; box-shadow: 2px 2px 2px #88EE88; }
+    .span-aside-img{ position: relative; top: 25px; left: 100px; background-color: #88BBEE; border: 2px solid #88EE88; border-radius: 25px; padding: 5px; }
+    .span-aside-code{ position: relative; bottom: 10px; left: 20px; background-color: #88BBEE; border: 2px solid #88EE88; border-radius: 25px; padding: 5px; }
+
+        .aside-section__code-block{ position: absolute; left: 35%; top: 281%; width: 20%; height: 70%; background-color: #EEBB88; border: 2px solid #88EE88; border-radius: 25px; padding: 25px; z-index: 1; }
+        #code{ height: 100%; box-sizing: border-box; }
+        .aside-section__code{ font-size: small; position: absolute; }
+
+    .span-aside-article{ position: relative; top: 40px; background-color: #EEBB88; border: 2px solid #88EE88; border-radius: 25px; padding: 5px; }
+    .span-aside-section{ position: relative; background-color: #EEBB88; border: 2px solid #88EE88; border-radius: 25px; padding: 5px; }
+
+        .page-footer{ text-align: center; border: 1px solid #88EE88; background-color: #EE88EE; padding: 10px; }
+        #footer{ background-color: #EEBB88; border: 2px solid #88EE88; border-radius: 25px; padding: 5px; }
     </style>
 </head>
 <body>
-<header id="header" class="page-header">
-    <span id="pageHeader"><strong>header</strong></span>
-    <span id="H1"><strong>h1</strong></span>
+    <header id="header" class="page-header">
+    <span class="span-label span-pageHeader" aria-hidden="true"><strong>header</strong></span>
+    <span class="span-label span-H1" aria-hidden="true"><strong>h1</strong></span>
     <h1 class="page-header__title">TP N3 HTML et CSS: Organisation sémantique du contenu d'une page.<br>Les propriétés Float et Display : inline-block</h1>
 
     <nav id="menu" class="menu-nav">
-        <span id="spanNav"><strong>nav</strong></span>
+        <span class="span-label span-nav" aria-hidden="true"><strong>nav</strong></span>
         <ul class="menu-nav__list">
             <li class="menu-nav__item">
                 <a href="#float" class="menu-nav__link">Propriété: Float</a>
@@ -358,7 +106,7 @@
                 <a href="#aside-doc" class="menu-nav__link">Organisation sémantique du HTML :</a>
                 <ol class="menu-nav__sublist">
                     <li class="menu-nav__subitem"><a href="#aside-principe" >Principe</a></li>
-                    <li class="menu-nav__subitem"><a href="#aside-elements" >Eléments</a></li>
+                    <li class="menu-nav__subitem"><a href="#aside-elements" >Éléments</a></li>
                     <li class="menu-nav__subitem"><a href="#aside-utilisation" >Utilisation</a></li>
                     <li class="menu-nav__subitem"><a href="#aside-documentation" >Documentation</a></li>
                 </ol>
@@ -367,17 +115,17 @@
     </nav>
 </header>
 
-<main id="main" class="main-content">
-    <span id="spanMain"><strong>main</strong></span>
+    <main id="main" class="main-content">
+    <span class="span-label span-main" aria-hidden="true"><strong>main</strong></span>
     <article id="float" class="article article--float">
-        <span id="spanArticle"><strong>article</strong></span>
+        <span class="span-label span-article" aria-hidden="true"><strong>article</strong></span>
         <header class="article__header">
-            <span id="headerFloat"><strong>header</strong></span>
+            <span class="span-label span-headerFloat" aria-hidden="true"><strong>header</strong></span>
             <h2 class="article__title">Propriété: Float</h2>
         </header>
 
         <section id="float-principe" class="content-section">
-            <span id="spanSection"><strong>section</strong></span>
+            <span class="span-label span-section" aria-hidden="true"><strong>section</strong></span>
             <header class="content-section__header">
                 <h3 class="content-section__title">Principe et fonctionnement</h3>
             </header>
@@ -385,7 +133,7 @@
             <p>Le texte et les autres éléments en ligne (inline) entoureront alors l'élément flottant (phénomène appelé habillage).</p>
             <p>L'élément est retiré du flux normal de la page, mais reste dans le flux général (contrairement au positionnement absolu).</p>
             <aside id="asideInSection" class="content-section__aside">
-                <span id="spanAside"><strong>aside</strong></span>
+                <span class="span-label span-asideInSection" aria-hidden="true"><strong>aside</strong></span>
                 <p>Un élément flottant est un élément pour lequel la valeur calculée de <code>float</code> est différente de <code>none</code>.</p>
                 <p>Le flottement implique l'utilisation d'une disposition en bloc. Cette propriété modifie donc la valeur de <code>display</code> de certains éléments (un élément qui était <code>inline</code>, par exemple, devient automatiquement <code>block</code> une fois qu'on lui applique un <code>float</code> différent de <code>none</code>).</p>
             </aside>
@@ -452,7 +200,7 @@
     </article>
     <article id="inlineBlock" class="article article--inline-block">
         <header id="headerArticle" class="article__header">
-            <span id="spanHeader"><strong>header</strong></span>
+            <span class="span-label span-headerArticle" aria-hidden="true"><strong>header</strong></span>
             <h2 class="article__title">Propriété: display à la valeur inline-block</h2>
         </header>
         <section id="inline-principe" class="content-section">
@@ -546,12 +294,12 @@
         </section>
     </article>
     <article id="aside-doc" class="aside-panel">
-        <span id="aside-article"><strong>article</strong></span>
+        <span class="span-label span-aside-article" aria-hidden="true"><strong>article</strong></span>
         <header class="aside-panel__header">
             <h2 class="aside-panel__title">Organisation sémantique du HTML</h2>
         </header>
-            <section id="aside-principe" class="aside-section">
-                <span id="aside-section"><strong>section</strong></span>
+                <section id="aside-principe" class="aside-section">
+                <span class="span-label span-aside-section" aria-hidden="true"><strong>section</strong></span>
                 <header class="aside-section__header">
                     <h3 class="aside-section__title">Principe</h3>
                 </header>
@@ -566,13 +314,13 @@
                 </dl>
                 <p>L'objectif principal est d'aider les machines (moteurs de recherche, technologies d'assistance) à comprendre et à interpréter la structure et la hiérarchie de votre contenu (notamment en SEO on-page).</p>
                 <aside id="aside-svg" class="aside-svg">
-                    <span id="aside-img"><strong>aside</strong></span>
+                    <span class="span-label span-aside-img" aria-hidden="true"><strong>aside</strong></span>
                     <img src="./assets/SemanticSearchNonSemantic.svg" alt="exemple visuel de html sémantique et non sémantique" class="image__content">
                 </aside>
             </section>
             <section id="aside-elements" class="aside-section">
                 <header class="aside-section__header">
-                    <h3 class="aside-section__title">Eléments</h3>
+                    <h3 class="aside-section__title">Éléments</h3>
                 </header>
                 <dl class="aside-section__list">
                     <dt>main</dt>
@@ -611,11 +359,11 @@
                     <li><a href="#float-principe" class="link link--content">&lt;section&gt;</a></li>
                     <li><a href="#asideInSection" class="link link--content">&lt;aside&gt; dans &lt;section&gt;</a></li>
                     <li><a href="#aside-doc" class="link link--content">&lt;aside&gt;</a></li>
-                    <li><a href="#aside-section" class="link link--content">&lt;section&gt; dans &lt;aside&gt;</a></li>
+                    <li><a href="#aside-principe" class="link link--content">&lt;section&gt; dans &lt;aside&gt;</a></li>
                     <li><a href="#footer" class="link link--content">&lt;footer&gt;</a></li>
                 </ul>
                 <aside class="aside-section__code-block">
-                    <span id="aside-code"><strong>aside</strong></span>
+                    <span class="span-label span-aside-code" aria-hidden="true"><strong>aside</strong></span>
                     <h4 class="aside-section__code-title">Architecture de la page :</h4>
                     <pre id="code">
                 <code class="aside-section__code">
@@ -683,9 +431,9 @@
 </main>
 
 
-<footer  class="page-footer">
-    <span id="footer"><strong>footer</strong></span>
-    <small class="page-footer__copy">Boyer laurent TP N3 UE 5.2 LP-DWCA session 2025/2026</small>
+<footer id="footer" class="page-footer">
+    <span class="span-label span-footer" aria-hidden="true"><strong>footer</strong></span>
+    <small class="page-footer__copy">Boyer Laurent TP N3 UE 5.2 LP-DWCA session 2025/2026</small>
 </footer>
 </body>
 </html>
