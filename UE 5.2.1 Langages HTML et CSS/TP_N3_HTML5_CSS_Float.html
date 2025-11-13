@@ -11,16 +11,328 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund+Guides:wght@100..400&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Bungee+Shade&family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/TP_N3_Style.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Alegreya', 'Bungee Shade', cursive, sans-serif;
+            box-sizing: border-box;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            list-style: none;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+        }
+        /*header styles*/
+        #spanNav{
+            position: relative;
+            right: 20px;
+            background-color: #EEBB88;
+            border: 2px solid #88EE88;
+            border-radius: 25px;
+            padding: 5px;
+        }
+        #H1 {
+            position: relative;
+            right: 20px;
+            top: 35px;
+            background-color: #EEBB88;
+            border: 2px solid #88EE88;
+            border-radius: 25px;
+            padding: 5px;
+        }
+        #pageHeader{
+            position: relative;
+            bottom: 5px;
+            background-color: #EEBB88;
+            border: 2px solid #88EE88;
+            border-radius: 25px;
+            padding: 5px;
+        }
+        #header{
+            border: #88EE88 solid 1px;
+            background-color: #EE88EE;
+            padding: 10px;
+        }
+        .page-header__title{
+            text-align: center;
+            padding: 45px 50px;
+            border: #88EE88 solid 1px;
+            background-color: #88BBEE;
+            margin-bottom: 25px;
+            border-radius: 25px;
+        }
+        .menu-nav{
+            display: inline-block;
+            margin:0 auto 25px auto;
+            padding: 25px;
+            width: 100%;
+            border: #88EE88 solid 1px;
+            background-color: #88BBEE;
+            border-radius: 25px;
+            box-sizing: border-box;
+        }
+        .menu-nav__item{
+            display: inline-block;
+            padding: 10px 15px;
+        }
+        .menu-nav__link{
+            padding: 10px;
+        }
+        .menu-nav__sublist{
+            padding: 10px 15px;
+        }
+        .menu-nav__subitem{
+            display: inline-block;
+            padding: 10px 15px;
+        }
+
+        /*Main styles*/
+        .main-content{
+            padding: 50px;
+            border: 2px dashed #88EE88;
+            display: flow-root;
+            background-color: #EEBB88;
+        }
+        #spanMain{
+            position: relative;
+            bottom: 40px;
+            right: 30px;
+        }
+        #spanSection{
+            position: relative;
+            bottom: 20px;
+            right: 30px;
+        }
+        #spanAside{
+            position: relative;
+            right: 30px;
+            background-color: #88BBEE;
+            border: 2px solid #88EE88;
+            border-radius: 25px;
+            padding: 5px;
+        }
+        #spanHeader, #headerFloat{
+            position: relative;
+            bottom: 20px;
+            right: 300px;
+            background-color: #88BBEE;
+            border: 2px solid #88EE88;
+            border-radius: 25px;
+            padding: 10px;
+        }
+        #spanArticle{
+            position: relative;
+            bottom: 10px;
+            right: 0;
+            background-color: #EEBB88;
+            border: 2px solid #88EE88;
+            border-radius: 25px;
+            padding: 5px;
+        }
+        #spanSection, #spanMain{
+            background-color: #88BBEE;
+            border: 2px solid #88EE88;
+            border-radius: 25px;
+            padding: 10px;
+        }
+        .article{
+            width: 45%;
+        }
+        .article__header{
+            text-align: center;
+            padding: 50px;
+            margin-bottom: 50px;
+            border-radius: 15px;
+            border: solid 2px #88EE88;
+            background-color: #eb8220;
+        }
+        .article--float, .article--inline-block{
+            float: left;
+            padding:20px;
+            border: #88EE88 1px solid;
+            border-radius: 10px;
+            background-color: #88BBEE;
+        }
+        #aside--display{
+            position: relative;
+            top: 0;
+        }
+        .article--inline-block{
+            float: right;
+        }
+        .content-section{
+            width: 40%;
+            padding: 10px 10px;
+            margin: 20px;
+            border-radius: 10px;
+            background-color: #EEBB88;
+        }
+        #float-principe,#float-doc, #inline-principe,#inline-doc, #aside-elements, #main{
+            float: left;
+        }
+        #float-principe,#float-doc, #inline-principe,#inline-doc, #aside-elements, #main{
+            float: left;
+        }
+        #float-syntaxe, #float-utilisation, #inline-syntaxe, #inline-utilisation, #aside-elements{
+            float: right;
+        }
+        #float-syntaxe, #float-utilisation, #inline-syntaxe, #inline-utilisation, #aside-elements{
+            float: right;
+        }
+        .content-section__aside{
+            position: relative;
+            top: 40px;
+            left: 20px;
+            padding: 10px;
+            border: #88EE88 1px solid;
+            border-radius: 10px;
+            background-color: #88BBEE;
+            box-shadow: 2px 2px 2px #88EE88 ;
+        }
+        /*aside style*/
+
+        .aside-panel{
+            display: inline-block;
+            border: #88EE88 1px solid;
+            background-color: #EEEE88;
+            border-radius: 10px;
+        }
+        .aside-panel__header{
+            text-align: center;
+            border-radius: 10px;
+            background-color: #88BBEE;
+            box-shadow: 2px 2px 2px #88EE88 ;
+            padding: 25px;
+            width: 50%;
+            margin: 20px auto;
+        }
+        #aside-principe, #aside-utilisation, #aside-documentation{
+            float: left;
+            width: 40%;
+            background-color: #88BBEE;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        #aside-principe, #aside-utilisation, #aside-documentation{
+            float: left;
+            width: 40%;
+            background-color: #88BBEE;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        #aside-documentation{
+            position: relative;
+            z-index: 10;
+            width: 35%;
+        }
+        #aside-elements{
+            float: right;
+            width: 40%;
+            background-color: #88BBEE;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        #aside-svg{
+            position: absolute;
+            width: 14%;
+            top: 230%;
+            left: 40%;
+        }
+        .image__content{
+            width: 100%;
+            height: 100%;
+            background-color: #EEBB88;
+            border: 2px solid #88EE88;
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 2px 2px 2px #88EE88 ;
+        }
+        #aside-img{
+            position: relative;
+            top: 25px;
+            left: 100px;
+            background-color: #88BBEE;
+            border: 2px solid #88EE88;
+            border-radius: 25px;
+            padding: 5px;
+        }
+        #aside-code{
+            position: relative;
+            bottom: 10px;
+            left: 20px;
+            background-color: #88BBEE;
+            border: 2px solid #88EE88;
+            border-radius: 25px;
+            padding: 5px;
+        }
+        .aside-section__code-block{
+            position: absolute;
+            left: 35%;
+            top: 268%;
+            width: 20%;
+            height: 70%;
+            background-color: #EEBB88;
+            border: 2px solid #88EE88;
+            border-radius: 25px;
+            padding: 25px;
+            z-index: 1;
+        }
+        #code{
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .aside-section__code{
+            font-size: small;
+            position: absolute;
+        }
+        #aside-article{
+            position: relative;
+            top: 40px;
+            background-color: #EEBB88;
+            border: 2px solid #88EE88;
+            border-radius: 25px;
+            padding: 5px;
+        }
+        #aside-section{
+            position: relative;
+            background-color: #EEBB88;
+            border: 2px solid #88EE88;
+            border-radius: 25px;
+            padding: 5px;
+        }
+        .page-footer{
+            text-align: center;
+            border: #88EE88 solid 1px;
+            background-color: #EE88EE;
+            padding: 10px;
+        }
+        #footer{
+            background-color: #EEBB88;
+            border: 2px solid #88EE88;
+            border-radius: 25px;
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
-<header class="page-header">
+<header id="header" class="page-header">
     <span id="pageHeader"><strong>header</strong></span>
     <span id="H1"><strong>h1</strong></span>
     <h1 class="page-header__title">TP N3 HTML et CSS: Organisation sémantique du contenu d'une page.<br>Les propriétés Float et Display : inline-block</h1>
 
     <nav id="menu" class="menu-nav">
-        <span id="nav"><strong>nav</strong></span>
+        <span id="spanNav"><strong>nav</strong></span>
         <ul class="menu-nav__list">
             <li class="menu-nav__item">
                 <a href="#float" class="menu-nav__link">Propriété: Float</a>
@@ -55,25 +367,25 @@
     </nav>
 </header>
 
-<main class="main-content">
-    <span id="main"><strong>main</strong></span>
+<main id="main" class="main-content">
+    <span id="spanMain"><strong>main</strong></span>
     <article id="float" class="article article--float">
-        <span id="article"><strong>article</strong></span>
+        <span id="spanArticle"><strong>article</strong></span>
         <header class="article__header">
-            <span id="header"><strong>header</strong></span>
+            <span id="headerFloat"><strong>header</strong></span>
             <h2 class="article__title">Propriété: Float</h2>
         </header>
 
         <section id="float-principe" class="content-section">
-            <span id="section"><strong>section</strong></span>
+            <span id="spanSection"><strong>section</strong></span>
             <header class="content-section__header">
                 <h3 class="content-section__title">Principe et fonctionnement</h3>
             </header>
             <p>La propriété CSS <code class="content-section__code">float</code> indique qu'un élément doit être retiré du flux normal et doit être placé sur le côté droit ou sur le côté gauche de son conteneur.</p>
             <p>Le texte et les autres éléments en ligne (inline) entoureront alors l'élément flottant (phénomène appelé habillage).</p>
             <p>L'élément est retiré du flux normal de la page, mais reste dans le flux général (contrairement au positionnement absolu).</p>
-            <aside class="content-section__aside">
-                <span id="aside"><strong>aside</strong></span>
+            <aside id="asideInSection" class="content-section__aside">
+                <span id="spanAside"><strong>aside</strong></span>
                 <p>Un élément flottant est un élément pour lequel la valeur calculée de <code>float</code> est différente de <code>none</code>.</p>
                 <p>Le flottement implique l'utilisation d'une disposition en bloc. Cette propriété modifie donc la valeur de <code>display</code> de certains éléments (un élément qui était <code>inline</code>, par exemple, devient automatiquement <code>block</code> une fois qu'on lui applique un <code>float</code> différent de <code>none</code>).</p>
             </aside>
@@ -139,8 +451,8 @@
         </section>
     </article>
     <article id="inlineBlock" class="article article--inline-block">
-        <header class="article__header">
-            <span id="header"><strong>header</strong></span>
+        <header id="headerArticle" class="article__header">
+            <span id="spanHeader"><strong>header</strong></span>
             <h2 class="article__title">Propriété: display à la valeur inline-block</h2>
         </header>
         <section id="inline-principe" class="content-section">
@@ -293,14 +605,12 @@
                 </header>
                 <ul class="aside-section__list">
                     <li><a href="#main" class="link link--content">&lt;main&gt;</a></li>
-                    <li><a href="#pageHeader" class="link link--content">&lt;header&gt;</a></li>
-                    <li><a href="#nav" class="link link--content">&lt;nav&gt;</a></li>
-                    <li><a href="#article" class="link link--content">&lt;article&gt;</a></li>
-                    <li><a href="#section" class="link link--content">&lt;section&gt;</a></li>
-                    <li><a href="#header" class="link link--content">&lt;header&gt; dans &lt;section&gt; </a></li>
-                    <li><a href="#aside" class="link link--content">&lt;aside&gt; dans &lt;section&gt;</a></li>
+                    <li><a href="#header" class="link link--content">&lt;header&gt;</a></li>
+                    <li><a href="#menu" class="link link--content">&lt;nav&gt;</a></li>
+                    <li><a href="#float" class="link link--content">&lt;article&gt;</a></li>
+                    <li><a href="#float-principe" class="link link--content">&lt;section&gt;</a></li>
+                    <li><a href="#asideInSection" class="link link--content">&lt;aside&gt; dans &lt;section&gt;</a></li>
                     <li><a href="#aside-doc" class="link link--content">&lt;aside&gt;</a></li>
-                    <li><a href="#aside-article" class="link link--content">&lt;article&gt; dans &lt;aside&gt;</a></li>
                     <li><a href="#aside-section" class="link link--content">&lt;section&gt; dans &lt;aside&gt;</a></li>
                     <li><a href="#footer" class="link link--content">&lt;footer&gt;</a></li>
                 </ul>

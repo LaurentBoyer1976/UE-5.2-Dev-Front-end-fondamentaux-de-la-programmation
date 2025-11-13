@@ -32,15 +32,6 @@ img{
     border-radius: 25px;
     padding: 5px;
 }
-#H1 {
-     position: relative;
-     right: 20px;
-     top: 35px;
-     background-color: #EEBB88;
-     border: 2px solid #88EE88;
-     border-radius: 25px;
-     padding: 5px;
-}
 #pageHeader{
     position: relative;
     bottom: 5px;
@@ -113,7 +104,7 @@ img{
     border-radius: 25px;
     padding: 5px;
 }
-#header{
+#header, #headerFloat{
     position: relative;
     bottom: 20px;
     right: 300px;
@@ -158,11 +149,6 @@ img{
 #aside--display{
     position: relative;
     top: 0;
-
-#aside--display{
-    position: relative;
-    top: 0;
-}
 }
 .article--inline-block{
     float: right;
@@ -333,3 +319,4 @@ img{
     border-radius: 25px;
     padding: 5px;
 }
+<link rel="stylesheet" href="./styles/TP_N3_Style.css">
