@@ -81,6 +81,30 @@
                     background-position: var(--size) 0;
                 }
             }
+            .navBar{
+                display: block;
+                width: 100%;
+                text-align: right;
+                padding: 1.5rem;
+            }
+            .link_container{
+                width: 100%;
+            }
+            .toTP3{
+                border: 3px solid rgba(68, 93, 250, 0.63);
+                border-radius: 15px;
+                padding: 1rem;
+                text-align: center;
+                text-decoration: none;
+                font-family: "Bungee Shade", cursive;
+                font-weight: 400;
+                font-size: 2vw;
+                color: rgba(68, 93, 250, 0.83);
+            }
+            .toTP3:hover{
+                background-color: rgba(68, 93, 250, 0.63);
+                color: #ffed94;
+            }
             #email:valid{
                 border: 1px solid rgba(0, 215, 106, 0.63);
                 border-radius: 5px;
@@ -216,6 +240,11 @@
 <body>
 <header class="title__container">
     <h1>Quiz HTML5 et CSS</h1>
+    <nav class="navBar">
+        <div class="link_container">
+            <a class="toTP3" href="TP-html/indexTPN3_rendu.html">To TP N3</a>
+        </div>
+    </nav>
 </header>
 <main>
     <article>

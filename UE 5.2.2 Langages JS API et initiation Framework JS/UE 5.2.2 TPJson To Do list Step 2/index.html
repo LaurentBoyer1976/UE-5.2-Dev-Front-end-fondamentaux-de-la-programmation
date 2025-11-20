@@ -245,7 +245,23 @@
         <section class="form-group">
             <form action="">
                 <fieldset>
-
+                    <legend>Personne en charge:</legend>
+                    <label for="assignation">Nom et prénom</label>
+                    <input type="text" id="assignation" name="assignation">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </fieldset>
+                <fieldset>
+                    <legend>Libellé et description:</legend>
+                    <label for="libelle">Description</label>
+                    <input type="text" id="libelle" name="libelle">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="5"></textarea>
+                </fieldset>
+                <fieldset>
+                    <legend>Planification et échéance:</legend>
+                    <label for="date_de_completion">Date échéance</label>
+                    <input type="date" id="date_de_completion" name="date_de_completion">
                 </fieldset>
             </form>
         </section>
