@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e5d919e-5fdf-4d2a-a2de-60ffc75e2904" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JsScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/JsScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP/script.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP/script.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP4_HTML_Form.html" beforeDir="false" afterPath="$PROJECT_DIR$/TP4_HTML_Form.html" afterDir="false" />
-    </list>
+    <list default="true" id="0e5d919e-5fdf-4d2a-a2de-60ffc75e2904" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1761226437765</updated>
       <workItem from="1761226439069" duration="56000" />
-      <workItem from="1763633334248" duration="2359000" />
+      <workItem from="1763633334248" duration="2947000" />
     </task>
     <servers />
   </component>
