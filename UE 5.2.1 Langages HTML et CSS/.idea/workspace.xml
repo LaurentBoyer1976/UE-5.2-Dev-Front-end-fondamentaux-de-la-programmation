@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e5d919e-5fdf-4d2a-a2de-60ffc75e2904" name="Changes" comment="" />
+    <list default="true" id="0e5d919e-5fdf-4d2a-a2de-60ffc75e2904" name="Changes" comment="saisi script">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHP/script.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP/script.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,11 +60,24 @@
       <option name="presentableId" value="Default" />
       <updated>1761226437765</updated>
       <workItem from="1761226439069" duration="56000" />
-      <workItem from="1763633334248" duration="2947000" />
+      <workItem from="1763633334248" duration="5688000" />
     </task>
+    <task id="LOCAL-00001" summary="saisi script">
+      <option name="closed" value="true" />
+      <created>1763648046267</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763648046267</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="saisi script" />
+    <option name="LAST_COMMIT_MESSAGE" value="saisi script" />
   </component>
 </project>
