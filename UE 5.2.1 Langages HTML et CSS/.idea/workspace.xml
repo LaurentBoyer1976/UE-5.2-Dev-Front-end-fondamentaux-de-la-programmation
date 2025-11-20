@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0e5d919e-5fdf-4d2a-a2de-60ffc75e2904" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../UE 5.2.2 Langages JS API et initiation Framework JS/UE 5.2.2 RS_JS_N2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../UE 5.2.2 Langages JS API et initiation Framework JS/UE 5.2.2 RS_JS_N2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JsScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/JsScript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHP/script.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP/script.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP4_HTML_Form.html" beforeDir="false" afterPath="$PROJECT_DIR$/TP4_HTML_Form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="34T8w3RnHTD9YJ8QHF87gevh2QM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,13 +37,19 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Laurent/Formation_dev/LPDWCA/UE 5.2 Dev Front-end fondamentaux de la programmation/UE 5.2.1 Langages HTML et CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.26830.93" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PS-252.27397.112" />
+        <option value="bundled-php-predefined-a98d8de5180a-b35feea871ed-com.jetbrains.php.sharedIndexes-PS-252.27397.112" />
       </set>
     </attachedChunks>
   </component>
@@ -46,6 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1761226437765</updated>
       <workItem from="1761226439069" duration="56000" />
+      <workItem from="1763633334248" duration="2359000" />
     </task>
     <servers />
   </component>

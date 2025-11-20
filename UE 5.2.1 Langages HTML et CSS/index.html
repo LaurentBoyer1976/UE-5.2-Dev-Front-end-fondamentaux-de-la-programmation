@@ -1,438 +1,315 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tutoriel Organisation des contenus et propriétés float et inline-block</title>
-    <meta name="description" content="Page tutoriel sur l'organisation des éléments HTML et les propriétés float et inline-block">
-    <meta name="author" content="Boyer Laurent">
-    <meta name="keywords" content="HTML, tutoriel, sémantique, CSS, float, inline-block">
-    <link rel="icon" type="image/png" href="https://static.alwaysdata.com/aldjango/img/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund+Guides:wght@100..400&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Bungee+Shade&family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Nettoyage : CSS centralisé pour notation (float / inline-block) */
-        *{
-            margin: 0;
-            padding: 0;
-            font-family: 'Alegreya', 'Bungee Shade', cursive, sans-serif;
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz HTML5</title>
+        <meta name="description" content="Page tutoriel sur l'organisation des éléments HTML et les propriétés float et inline-block">
+        <meta name="author" content="Boyer Laurent">
+        <meta name="keywords" content="HTML, tutoriel, sémantique, CSS, float, inline-block">
+        <link rel="icon" type="image/png" href="https://static.alwaysdata.com/aldjango/img/favicon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund+Guides:wght@100..400&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Bungee+Shade&family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
+        <!--<link rel="stylesheet" href="./styles/style.css">-->
+        <script src="https://cdn.ckbox.io/ckbox/2.4.0/ckbox.js"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
+        <script src="./PHP/script.php" defer></script>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: "Playwrite DE Grund Guides", cursive, sans-serif, serif;
+                box-sizing: border-box;
+            }
+            :root{
+                --size: 20px;
+                --bck-grdColor: #ffed94;
+                --yellow: #feac5e;
+                --yellow1: #eb8220;
+                --lightblue: #4bc0c8;
+                --lightblue1:#41a6ad;
+                --lightblue2: #256266;
+                font-size: 16px;
+
+
+            }
+            body{
+                background-color: #f5f5f5;
+                min-height: 100vh;
+            }
+            main{
+                padding: 1rem;
+            }
+            .title__container, article{
+                background-color: #ffed94;
+            }
+            article{
+                border-radius: 15px;
+            }
+            h1{
+                font-family: "Bungee Shade", cursive;
+                font-weight: 400;
+                text-align: center;
+                width: 100%;
+                padding: 2.5rem 1rem;
+                font-size: 5vw;
+                background: linear-gradient(
+                        -45deg,
+                        #4bc0c8 25%,
+                        #feac5e 25%,
+                        #feac5e 50%,
+                        #4bc0c8 50%,
+                        #4bc0c8 75%,
+                        #feac5e 75%,
+                        #feac5e);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-size: var(--size) var(--size);
+                background-position: 0 0;
+                animation: stripes 1s linear infinite;
+                box-sizing: border-box;
+            }
+            @keyframes stripes {
+                0%{
+                    background-position: 0 0;
+                }
+                100% {
+                    background-position: var(--size) 0;
+                }
+            }
+            #email:valid{
+                border: 1px solid rgba(0, 215, 106, 0.63);
+                border-radius: 5px;
+                box-shadow: 0 0 8px rgba(0, 215, 106, 0.63);
+            }
+            #email:invalid{
+                border: 1px solid rgba(215, 20, 20, 0.63);
+                border-radius: 5px;
+                box-shadow: 0 0 5px rgba(215, 20, 20, 0.63);
+            }
+            h2{font-family: "Bungee Shade", cursive;
+            font-weight: 400;
+            text-align: center;
+            width: 100%;
+            padding: 2.5rem 1rem;
+            font-size: 3vw;
+            background: linear-gradient(
+            -45deg,
+               #4bc0c8 25%,
+            #feac5e 25%,
+            #feac5e 50%,
+            #4bc0c8 50%,
+            #4bc0c8 75%,
+            #feac5e 75%,
+            #feac5e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: var(--size) var(--size);
+            background-position: 0 0;
+            animation: stripes 1s linear infinite;
             box-sizing: border-box;
-        }
-        a{ text-decoration: none; }
-        ul{ list-style: none; }
-        img{ width: 150px; height: 150px; }
+            }
+            section{
+                width: 100%;
+                display: block;
+                text-align: center;
+                margin-bottom: 1.5rem;
 
-        /* Header */
-        .page-header__title{ text-align: center; padding: 45px 50px; border: 2px solid #88EE88; background-color: #88BBEE; margin-bottom: 25px; border-radius: 25px; }
-        .menu-nav{ display: inline-block; margin:0 auto 25px auto; padding: 25px; width: 100%; border: 2px solid #88EE88; background-color: #88BBEE; border-radius: 25px; box-sizing: border-box; }
-        .menu-nav__item{ display: inline-block; padding: 10px 15px; }
+            }
+            h3{
+                font-family: "Bungee Shade", cursive;
+                font-weight: 400;
+                text-align: center;
+                padding: 1rem;
+            }
+            dl{
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding: 2rem 1rem;
+            }
+            dt{
+                font-family: "Bungee Shade", cursive;
+                font-weight: 300;
+                padding: 1rem;
+                margin-left: 1rem;
+            }
+            dd{
+                padding-left: 1rem;
+            }
+            form{
+                padding: 2rem 1rem;
+                display: block;
+                width: 100%;
+                text-align: left;
+                border: 3px solid rgba(68, 93, 250, 0.63);
+                border-radius: 15px;
+                background: rgba(195, 202, 247, 0.35);
+            }
+            label{
+                display: block;
+                width: 40%;
+                padding: 0.5rem 1rem;
+                margin-bottom: 0.35rem;
+            }
+            input[type="text"], input[type="date"], input[type="email"]{
+                width: 100%;
+                display: inline-block;
+                padding: 0.45rem;
+                border-radius: 15px;
+            }
+            fieldset{
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding: 0.45rem;
+                border: none;
+                margin: 1rem auto;
+            }
+            legend{
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding: 0.45rem;
+            }
+            .underline{
+                text-decoration: underline;
+            }
+            fieldset > label{
+                display: inline-block;
+                vertical-align: middle;
 
-        /* Main / layout */
-        .main-content{ padding: 50px; border: 2px dashed #88EE88; display: flow-root; background-color: #EEBB88; }
-    /* labels décoratifs (spans) - converted to classes to avoid being link anchors */
-    .span-label { display: inline-block; background-color: #88BBEE; border: 2px solid #88EE88; border-radius: 25px; padding: 5px 10px; margin-bottom: 8px; }
-    /* positionnements spécifiques pour labels historiques (conservent le rendu précédent) */
-    .span-H1 { position: relative; right: 20px; top: 35px; }
-    .span-pageHeader { position: relative; bottom: 5px; }
+            }
+            textarea{
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding: 0.45rem;
 
-        .article{ width: 45%; }
-        .article__header{ text-align: center; padding: 50px; margin-bottom: 50px; border-radius: 15px; border: solid 2px #88EE88; background-color: #eb8220; }
-        .article--float{ float: left; padding:20px; border: 1px solid #88EE88; border-radius: 10px; background-color: #88BBEE; }
-        .article--inline-block{ float: right; padding:20px; border: 1px solid #88EE88; border-radius: 10px; background-color: #88BBEE; }
+            }
+            select{
+                display: block;
+                width: 100%;
+            }
 
-        .content-section{ width: 40%; padding: 10px; margin: 20px; border-radius: 10px; background-color: #EEBB88; }
-
-        /* Positionnement des sous-sections (une seule définition, pas de duplicata) */
-        #float-principe, #float-doc, #inline-principe, #inline-doc, #aside-elements { float: left; }
-        #float-syntaxe, #float-utilisation, #inline-syntaxe, #inline-utilisation { float: right; }
-
-        .content-section__aside{ position: relative; top: 40px; left: 20px; padding: 10px; border: 1px solid #88EE88; border-radius: 10px; background-color: #88BBEE; box-shadow: 2px 2px 2px #88EE88; }
-
-        /* aside */
-        .aside-panel{ display: inline-block; border: 1px solid #88EE88; background-color: #EEEE88; border-radius: 10px; }
-        .aside-panel__header{ text-align: center; border-radius: 10px; background-color: #88BBEE; box-shadow: 2px 2px 2px #88EE88; padding: 25px; width: 50%; margin: 20px auto; }
-        #aside-principe, #aside-utilisation, #aside-documentation{ float: left; width: 40%; background-color: #88BBEE; padding: 15px; border-radius: 10px; margin: 20px; }
-        #aside-documentation{ position: relative; z-index: 10; width: 35%; }
-        #aside-elements{ float: right; width: 40%; background-color: #88BBEE; padding: 15px; border-radius: 10px; margin: 20px; }
-
-        #aside-svg{ position: absolute; width: 14%; top: 245%; left: 40%; }
-        .image__content{ width: 100%; height: 100%; background-color: #EEBB88; border: 2px solid #88EE88; border-radius: 25px; padding: 25px; box-shadow: 2px 2px 2px #88EE88; }
-    .span-aside-img{ position: relative; top: 25px; left: 100px; background-color: #88BBEE; border: 2px solid #88EE88; border-radius: 25px; padding: 5px; }
-    .span-aside-code{ position: relative; bottom: 10px; left: 20px; background-color: #88BBEE; border: 2px solid #88EE88; border-radius: 25px; padding: 5px; }
-
-        .aside-section__code-block{ position: absolute; left: 35%; top: 281%; width: 20%; height: 70%; background-color: #EEBB88; border: 2px solid #88EE88; border-radius: 25px; padding: 25px; z-index: 1; }
-        #code{ height: 100%; box-sizing: border-box; }
-        .aside-section__code{ font-size: small; position: absolute; }
-
-    .span-aside-article{ position: relative; top: 40px; background-color: #EEBB88; border: 2px solid #88EE88; border-radius: 25px; padding: 5px; }
-    .span-aside-section{ position: relative; background-color: #EEBB88; border: 2px solid #88EE88; border-radius: 25px; padding: 5px; }
-
-        .page-footer{ text-align: center; border: 1px solid #88EE88; background-color: #EE88EE; padding: 10px; }
-        #footer{ background-color: #EEBB88; border: 2px solid #88EE88; border-radius: 25px; padding: 5px; }
-    </style>
+        </style>
 </head>
 <body>
-    <header id="header" class="page-header">
-    <span class="span-label span-pageHeader" aria-hidden="true"><strong>header</strong></span>
-    <span class="span-label span-H1" aria-hidden="true"><strong>h1</strong></span>
-    <h1 class="page-header__title">TP N3 HTML et CSS: Organisation sémantique du contenu d'une page.<br>Les propriétés Float et Display : inline-block</h1>
-
-    <nav id="menu" class="menu-nav">
-        <span class="span-label span-nav" aria-hidden="true"><strong>nav</strong></span>
-        <ul class="menu-nav__list">
-            <li class="menu-nav__item">
-                <a href="#float" class="menu-nav__link">Propriété: Float</a>
-                <ol class="menu-nav__sublist">
-                    <li class="menu-nav__subitem"><a href="#float-principe" >Principe et fonctionnement</a></li>
-                    <li class="menu-nav__subitem"><a href="#float-syntaxe" >Syntaxe</a></li>
-                    <li class="menu-nav__subitem"><a href="#float-utilisation" >Utilisation</a></li>
-                    <li class="menu-nav__subitem"><a href="#float-doc" >Documentation</a></li>
-                </ol>
-            </li>
-
-            <li class="menu-nav__item">
-                <a href="#inlineBlock" class="menu-nav__link">Propriété: display à la valeur inline-block</a>
-                <ol class="menu-nav__sublist">
-                    <li class="menu-nav__subitem"><a href="#inline-principe" >Principe et fonctionnement</a></li>
-                    <li class="menu-nav__subitem"><a href="#inline-syntaxe" >Syntaxe</a></li>
-                    <li class="menu-nav__subitem"><a href="#inline-utilisation" >Utilisation</a></li>
-                    <li class="menu-nav__subitem"><a href="#inline-doc" >Documentation</a></li>
-                </ol>
-            </li>
-
-            <li class="menu-nav__item">
-                <a href="#aside-doc" class="menu-nav__link">Organisation sémantique du HTML :</a>
-                <ol class="menu-nav__sublist">
-                    <li class="menu-nav__subitem"><a href="#aside-principe" >Principe</a></li>
-                    <li class="menu-nav__subitem"><a href="#aside-elements" >Éléments</a></li>
-                    <li class="menu-nav__subitem"><a href="#aside-utilisation" >Utilisation</a></li>
-                    <li class="menu-nav__subitem"><a href="#aside-documentation" >Documentation</a></li>
-                </ol>
-            </li>
-        </ul>
-    </nav>
+<header class="title__container">
+    <h1>Quiz HTML5 et CSS</h1>
 </header>
+<main>
+    <article>
+        <h2>Pourquoi ce quiz?</h2>
+        <section>
+            <h3> Description et finalité :</h3>
+            <dl>
+                <dt>Description :</dt>
+                <dd>La première partie concerne vos informations personnelles, Nom, prénom, adresse mail et la date de réalisation du quiz</dd>
+                <dd>La seconde partie concerne les questions. Choix multiples, choix unique, par options et par saisie de texte(code).</dd>
 
-    <main id="main" class="main-content">
-    <span class="span-label span-main" aria-hidden="true"><strong>main</strong></span>
-    <article id="float" class="article article--float">
-        <span class="span-label span-article" aria-hidden="true"><strong>article</strong></span>
-        <header class="article__header">
-            <span class="span-label span-headerFloat" aria-hidden="true"><strong>header</strong></span>
-            <h2 class="article__title">Propriété: Float</h2>
-        </header>
-
-        <section id="float-principe" class="content-section">
-            <span class="span-label span-section" aria-hidden="true"><strong>section</strong></span>
-            <header class="content-section__header">
-                <h3 class="content-section__title">Principe et fonctionnement</h3>
-            </header>
-            <p>La propriété CSS <code class="content-section__code">float</code> indique qu'un élément doit être retiré du flux normal et doit être placé sur le côté droit ou sur le côté gauche de son conteneur.</p>
-            <p>Le texte et les autres éléments en ligne (inline) entoureront alors l'élément flottant (phénomène appelé habillage).</p>
-            <p>L'élément est retiré du flux normal de la page, mais reste dans le flux général (contrairement au positionnement absolu).</p>
-            <aside id="asideInSection" class="content-section__aside">
-                <span class="span-label span-asideInSection" aria-hidden="true"><strong>aside</strong></span>
-                <p>Un élément flottant est un élément pour lequel la valeur calculée de <code>float</code> est différente de <code>none</code>.</p>
-                <p>Le flottement implique l'utilisation d'une disposition en bloc. Cette propriété modifie donc la valeur de <code>display</code> de certains éléments (un élément qui était <code>inline</code>, par exemple, devient automatiquement <code>block</code> une fois qu'on lui applique un <code>float</code> différent de <code>none</code>).</p>
-            </aside>
-        </section>
-
-        <section id="float-syntaxe" class="content-section">
-            <header class="content-section__header">
-                <h3 class="content-section__title">Syntaxe</h3>
-            </header>
-            <dl class="content-section__list">
-                <dt>Valeurs avec un mot-clé (Directionnelles)</dt>
-                <dd><code class="content-section__code">float: left;</code></dd>
-                <dd><code class="content-section__code">float: right;</code></dd>
-                <dd><code class="content-section__code">float: none;</code> (Valeur par défaut, non flottant)</dd>
+                <dt>Finalité :</dt>
+                <dd>Le but de ce quiz est de vous permettre de vérifier l'état de vos connaissances en HTML5.</dd>
+                <dd>Grâce à ses résultats, vous pourrez faire un état des lieux de votre maitrise de ce langage de base en développement informatique.</dd>
+                <dd>Vous pourrez ainsi orienter plus facilement votre apprentissage sur les points que vous connaissez le moins et approfondir puis pérenniser ceux que vous maitrisez le plus.</dd>
             </dl>
-            <dl class="content-section__list">
-                <dt>Valeurs avec un mot-clé (Logiques)</dt>
-                <dd><code class="content-section__code">float: inline-start;</code> (Démarre du côté du début de la ligne, par défaut <code>left</code>)</dd>
-                <dd><code class="content-section__code">float: inline-end;</code> (Démarre du côté de la fin de la ligne, par défaut <code>right</code>)</dd>
-            </dl>
-            <dl class="content-section__list">
-                <dt>Valeurs globales</dt>
-                <dd><code class="content-section__code">float: inherit;</code></dd>
-                <dd><code class="content-section__code">float: initial;</code></dd>
-                <dd><code class="content-section__code">float: revert;</code></dd>
-                <dd><code class="content-section__code">float: revert-layer;</code></dd>
-                <dd><code class="content-section__code">float: unset;</code></dd>
-            </dl>
-        </section>
-
-        <section id="float-utilisation" class="content-section">
-            <header class="content-section__header">
-                <h3 class="content-section__title">Utilisation</h3>
-            </header>
-            <p>Lorsqu'un élément est rendu flottant, il est décalé soit vers la gauche, soit vers la droite de son conteneur jusqu'à ce qu'il rencontre le bord de ce conteneur ou un autre élément flottant.</p>
-            <p>Si plusieurs éléments flottent dans la même direction, ils se positionnent les uns à la suite des autres. S'il n'y a plus d'espace sur la ligne courante, l'élément passe à la ligne suivante.</p>
-
-            <h4>Gestion de l'Effondrement du Conteneur</h4>
-            <p>
-                Étant donné qu'un élément flottant est retiré du flux normal, son conteneur parent ne prend plus sa hauteur en compte, ce qui conduit à l'effondrement de la boîte du conteneur (si celui-ci ne contient que des flottants).
-            </p>
-            <p>
-                Pour obliger le conteneur parent à englober ses enfants flottants et corriger cet effondrement, on doit créer un nouveau Contexte de Formatage de Bloc (BFC). Les techniques pour cela incluent :
-            </p>
-            <ul>
-                <li>L'application de <code class="content-section__code">overflow: hidden;</code> (ou <code>auto</code>) au conteneur.</li>
-                <li>L'utilisation de la technique historique <code class="content-section__code">clearfix</code> via le pseudo-élément <code>::after</code>.</li>
-                <li>L'utilisation de la valeur moderne <code class="content-section__code">display: flow-root;</code> sur le conteneur (solution recommandée en CSS moderne).</li>
-            </ul>
-        </section>
-
-        <section id="float-doc" class="content-section">
-            <header class="content-section__header">
-                <h3 class="content-section__title">Documentation</h3>
-            </header>
-            <p>
-                Pour plus de détails techniques sur la propriété <code class="content-section__code">float</code> et ses effets, consultez les ressources suivantes :
-            </p>
-            <ul class="content-section__list">
-                <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/Reference/Properties/float" target="_blank" rel="noopener noreferrer" class="link link--content">Propriété <code>float</code> sur MDN</a></li>
-                <li><a href="https://www.w3.org/TR/css-display-3/#flow-root" target="_blank" rel="noopener noreferrer" class="link link--content">CSS Display Module Level 3 (pour <code>flow-root</code>)</a></li>
-            </ul>
         </section>
     </article>
-    <article id="inlineBlock" class="article article--inline-block">
-        <header id="headerArticle" class="article__header">
-            <span class="span-label span-headerArticle" aria-hidden="true"><strong>header</strong></span>
-            <h2 class="article__title">Propriété: display à la valeur inline-block</h2>
-        </header>
-        <section id="inline-principe" class="content-section">
-            <header class="content-section__header">
-                <h3 class="content-section__title">Principe et fonctionnement</h3>
-            </header>
-            <h4>Propriété display:</h4>
+        <form id="formQuiz" action="./PHP/script.php" method="post">
+            <label class="underline" for="date">Date :</label>
+            <input type = "date" id="date" name = "date">
 
-            <h4>display-legacy (Contexte Historique) :</h4>
-            <p> CSS 2 utilise une syntaxe avec un seul mot-clé pour la propriété display et il faut donc des mots-clés distincts pour les variantes bloc/en ligne d'un même mode de disposition.</p>
-            <h5>inline-block:</h5>
-            <p>L'élément s'inscrit dans le contenu environnant comme une boîte en ligne et organise son propre contenu en bloc.</p>
-            <p>Ce mot-clé est équivalent à la combinaison <code class="content-section__code">inline flow-root</code> dans la syntaxe modulaire.</p>
-            <aside id="aside--display" class="content-section__aside">
-                <p>La propriété CSS display est fondamentale pour déterminer le type de boîte qu'un élément génère (par exemple, un élément de bloc ou en ligne) et comment il organise ses enfants (par exemple, en tant que grille ou boîtes flexibles).</p>
-                <h5>Ce tutoriel se concentre spécifiquement sur la valeur inline-block, elle combine les caractéristiques suivantes :</h5>
-                <dl class="content-section__list">
-                    <dt>Type d'affichage extérieur (inline) :</dt>
-                    <dd>L'élément est disposé comme un élément en ligne dans le flux (il ne provoque pas de saut de ligne avant et après lui) et s'aligne horizontalement avec le texte ou d'autres éléments en ligne/inline-block.</dd>
-                    <dt>Type d'affichage intérieur (block) :</dt>
-                    <dd>Le contenu à l'intérieur de l'élément est formaté comme une boîte de bloc, permettant de définir des largeurs (width), des hauteurs (height), ainsi que des marges verticales (margin-top, margin-bottom) qui sont ignorées par les éléments purement en ligne.</dd>
-                </dl>
-            </aside>
-        </section>
+            <fieldset>
+                <legend class="underline">Vos informations personnelles :</legend>
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" placeholder="Saisissez votre nom" required><br>
+                <label for="prenom">Prenom :</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Saisissez votre prenom" required><br>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Saisissez votre email exemple: nomPrenom@xxxx.xx" pattern=".+@.+\..+" required><br>
+            </fieldset>
+            <fieldset>
+                <legend class="underline">Le questionnaire :</legend>
+                <fieldset>
+                    <legend>Quelle API de stockage côté client, introduite avec HTML5, est la plus appropriée pour stocker des données structurées et volumineuses nécessitant des requêtes d'indexation complexes, plutôt que de simples paires clé-valeur ?</legend>
+                    <label for="radio1">Web Storage (localStorage ou sessionStorage):</label>
+                    <input class="radio" type ="radio" id="radio1" name="radio" value="Web Storage">
+                    <label for="radio2">IndexedDB:</label>
+                    <input class="radio" type ="radio" id="radio2" name="radio" value="IndexedDB"><br>
+                    <label for="radio3">Cookies HTTP:</label>
+                    <input class="radio" type ="radio" id="radio3" name="radio" value="Cookies HTTP"><br>
+                    <label for="radio4">Web SQL Database:</label>
+                    <input class="radio" type ="radio" id="radio4" name="radio" value="Web SQL Database"><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Sélectionnez tous les éléments structurels de HTML5 qui peuvent être considérés comme du contenu de sectionnement (sectioning content).<br>
+                        Elles doivent généralement contenir un élément de titre ("h1" à "h6") pour des raisons sémantiques et d'accessibilité (création d'un contour du document).</legend>
+                    <label for="checkbox1">Élément : div</label>
+                    <input class="checkboxes" type ="checkbox" id="checkbox1" name="choix[]" value="div"><br>
+                    <label for="checkbox2">Élément : section</label>
+                    <input class="checkboxes" type ="checkbox" id="checkbox2" name="choix[]" value="section"><br>
+                    <label for="checkbox3">Élément : article</label>
+                    <input class="checkboxes" type ="checkbox" id="checkbox3" name="choix[]" value="article"><br>
+                    <label for="checkbox4">Élément : footer</label>
+                    <input class="checkboxes" type ="checkbox" id="checkbox4" name="choix[]" value="footer"><br>
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        Saisissez la ligne de code HTML5 qui permet de spécifier, via un attribut, qu'un champ de formulaire doit être rempli avant la soumission.
+                    </legend>
+                    <label class="underline" for="textarea">Saisissez votre code html:</label>
+                    <textarea rows="15" cols="50" id="textarea" name="codeUtilisateur" required></textarea>
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        1. Quel attribut HTML5 permet à un bouton spécifique d'ignorer la validation du formulaire lors de sa soumission ?<br>
+                        2. Quel élément est utilisé pour les méta-informations de l'en-tête du document et non le corps visible de la page ?<br>
+                        3. Quel sélecteur (en utilisant la flèche) cible spécifiquement le premier paragraphe enfant DIRECT d'un élément div ?<br>
+                        4. Quelle unité de mesure CSS est considérée comme absolue et non relative à la taille de la fenêtre (viewport) ou de la police de base ?<br>
+                    </legend>
+                    <label class="underline" for="select">Déroulez la liste par un click!</label>
+                    <select id="select" name="select" multiple required>
+                        <option value="">---Faites votre choix!---</option>
+                        <optgroup label="HTML5 - Q.1 : Quel attribut HTML5 permet à un bouton spécifique d'ignorer la validation du formulaire lors de sa soumission ?">
+                            <option value="html_q1_formvalidate=false">formvalidate="false"</option>
+                            <option value="html_q1_novalidate">novalidate</option>
+                            <option value="html_q1_formnovalidate">formnovalidate</option>
+                            <option value="html_q1_type=button">type="button"</option>
+                        </optgroup>
+                        <optgroup label="HTML5 - Q.2 : Quel élément est utilisé pour les méta-informations de l'en-tête ?">
+                            <option value="html_q2_header">header</option>
+                            <option value="html_q2_head">head</option>
+                            <option value="html_q2_title">title</option>
+                            <option value="html_q2_main">main</option>
+                        </optgroup>
+                        <optgroup label="HTML5 - Q.3 : Quel attribut désactive la validation du formulaire par le navigateur ?">
+                            <option value="html_q3_required">required</option>
+                            <option value="html_q3_disabled">disabled</option>
+                            <option value="html_q3_novalidate">formnovalidate</option>
+                            <option value="html_q3_pattern">pattern</option>
+                        </optgroup>
+                        <optgroup label="CSS3 - Q.4 : Quel sélecteur cible le premier paragraphe enfant d'un div ?">
+                            <option value="css_q4_first_child">div p:first-child</option>
+                            <option value="css_q4_first_of_type">div p:first-of-type</option>
+                            <option value="css_q4_child">div > p</option>
+                            <option value="css_q4_only_child">div p:only-child</option>
+                        </optgroup>
 
-        <section id="inline-syntaxe" class="content-section">
-            <header class="content-section__header">
-                <h3 class="content-section__title">Syntaxe</h3>
-            </header>
-            <dl class="content-section__list">
-                <dt>Valeur Unique (Legacy CSS2)</dt>
-                <dd><pre><code class="content-section__code">display: inline-block;</code></pre></dd>
+                    </select>
+                </fieldset>
 
-                <dt>Équivalence Modulaire (CSS 3/4)</dt>
-                <dd><pre><code class="content-section__code">display: inline flow-root;</code></pre></dd>
-            </dl>
-            <aside class="content-section__aside">
-                <p>
-                    Note sur l'équivalence : La syntaxe <code class="content-section__code">inline flow-root</code> est la façon moderne et explicite de décrire <code>inline-block</code>. Le mot-clé <code>flow-root</code> est crucial, car il indique que l'élément doit créer un Contexte de Formatage de Bloc (BFC), assurant notamment que l'élément contienne correctement tous ses enfants flottants.
-                </p>
-            </aside>
-        </section>
+            </fieldset>
+            <fieldset>
+                <legend class="underline">Soumettez ou réinitialisez votre formulaire</legend>
+                <button type="submit" value="Envoyer" name="Envoyer">envoyer</button>
+                <button type="reset" value="Annuler">annuler</button>
+            </fieldset>
 
-        <section id="inline-utilisation" class="content-section">
-            <header class="content-section__header">
-                <h3 class="content-section__title">Utilisation</h3>
-            </header>
-            <p>
-                <code class="content-section__code">display: inline-block;</code> est souvent utilisé dans les scénarios avec lesquels nous souhaitons combiner les avantages des éléments en ligne et en bloc.
-            </p>
-            <ul class="content-section__list">
-                <li>
-                    Menus de Navigation Horizontaux : Permet de placer les éléments de liste (<code>&lt;li&gt;</code>) côte à côte tout en permettant de définir des marges, des rembourrages (padding) et des dimensions précises pour les zones de clic.
-                </li>
-                <li>
-                    Contrôles de Formulaire et Icônes : Idéal pour positionner des icônes ou des champs de formulaire à côté d'un texte, tout en leur appliquant des dimensions ou des marges verticales que les éléments purement <code>inline</code> ignoreraient.
-                </li>
-                <li>
-                    Mises en Page Colonnes Simples (Historique) : Avant l'adoption généralisée de Flexbox et Grid, <code>inline-block</code> était une technique courante, bien que parfois complexe à gérer (problèmes d'espacement entre les éléments, nécessitant l'ajustement de <code>font-size</code>).
-                </li>
-            </ul>
-            <div class="exemple">
-                <h4>Exemple d'application dans un menu :</h4>
-                <p>Appliquer <code class="content-section__code">display: inline-block;</code> aux éléments <code>&lt;li&gt;</code> pour les aligner horizontalement et leur donner une hauteur :</p>
-                <code class="content-section__code">li { display: inline-block; padding: 10px; margin-right: 5px; height: 30px; }</code>
-            </div>
-        </section>
-
-        <section id="inline-doc" class="content-section">
-            <header class="content-section__header">
-                <h3 class="content-section__title">Documentation</h3>
-            </header>
-            <p>
-                Pour une information complète et à jour sur les types d'affichage CSS, veuillez consulter les ressources officielles :
-            </p>
-            <ul class="content-section__list">
-                <li>
-                    Mozilla Developer Network (MDN) :
-                    <ul class="content-section__sublist">
-                        <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/display" target="_blank" rel="noopener noreferrer" class="link link--content">Propriété <code>display</code></a></li>
-                        <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/display-box" target="_blank" rel="noopener noreferrer" class="link link--content">Référence sur les Valeurs <code>display</code></a> (incluant le modèle modulaire)</li>
-                    </ul>
-                </li>
-                <li>
-                    W3C/Spécification CSS :
-                    <ul class="content-section__sublist">
-                        <li><a href="https://www.w3.org/TR/css-display-3/" target="_blank" rel="noopener noreferrer" class="link link--content">CSS Display Module Level 3</a> (pour la syntaxe modulaire et <code>flow-root</code>)</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-    </article>
-    <article id="aside-doc" class="aside-panel">
-        <span class="span-label span-aside-article" aria-hidden="true"><strong>article</strong></span>
-        <header class="aside-panel__header">
-            <h2 class="aside-panel__title">Organisation sémantique du HTML</h2>
-        </header>
-                <section id="aside-principe" class="aside-section">
-                <span class="span-label span-aside-section" aria-hidden="true"><strong>section</strong></span>
-                <header class="aside-section__header">
-                    <h3 class="aside-section__title">Principe</h3>
-                </header>
-                <h4>Définition : Sémantique</h4>
-                <p>Le mot sémantique signifie "qui concerne le sens ou la signification".</p>
-                <p>Le HTML sémantique (ou balisage sémantique) est l'utilisation de balises HTML qui transmettent la signification et le rôle du contenu qu'elles contiennent, fournissant ainsi des informations supplémentaires sur l'importance relative des différentes parties de la page.</p>
-                <dl class="aside-section__list">
-                    <dt>HTML Sémantique (Exemple :  &lt;header&gt;, &lt;article&gt;, &lt;footer&gt;) :</dt>
-                    <dd>Ces balises définissent clairement le type de contenu qu'elles englobent.</dd>
-                    <dt>HTML Non Sémantique (Exemple : &lt;div&gt;, &lt;span&gt;) : :</dt>
-                    <dd>Ces balises n'ont pas de signification intrinsèque et ne véhiculent pas directement de sens.</dd>
-                </dl>
-                <p>L'objectif principal est d'aider les machines (moteurs de recherche, technologies d'assistance) à comprendre et à interpréter la structure et la hiérarchie de votre contenu (notamment en SEO on-page).</p>
-                <aside id="aside-svg" class="aside-svg">
-                    <span class="span-label span-aside-img" aria-hidden="true"><strong>aside</strong></span>
-                    <img src="./assets/SemanticSearchNonSemantic.svg" alt="exemple visuel de html sémantique et non sémantique" class="image__content">
-                </aside>
-            </section>
-            <section id="aside-elements" class="aside-section">
-                <header class="aside-section__header">
-                    <h3 class="aside-section__title">Éléments</h3>
-                </header>
-                <dl class="aside-section__list">
-                    <dt>main</dt>
-                    <dd>L'élément HTML &lt;main&gt; représente le contenu majoritaire du &lt;body&gt; du document.</dd>
-                    <dd>Le contenu principal de la zone est constitué de contenu directement en relation, ou qui étend le sujet principal du document ou de la fonctionnalité principale d'une application.</dd>
-                    <dd>Un document ne peut pas avoir plus d'un seul élément &lt;main&gt; sans attribut hidden.</dd>
-                    <dt>header</dt>
-                    <dd>L'élément HTML &lt;header&gt; représente du contenu introductif, généralement un groupe de contenu introductif ou de contenu aidant à la navigation.</dd>
-                    <dd>Il peut contenir des éléments de titre, mais aussi d'autres éléments tels qu'un logo, un formulaire de recherche, le nom d'auteur, etc.</dd>
-                    <dt>nav</dt>
-                    <dd>L'élément HTML &lt;nav&gt; représente une section d'une page ayant des liens vers d'autres pages ou des fragments de cette page.</dd>
-                    <dd>Autrement dit, c'est une section destinée à la navigation dans un document (avec des menus, des tables des matières, des index, etc.).</dd>
-                    <dt>article</dt>
-                    <dd>L'élément &lt;article&gt; représente une composition autonome dans un document, une page, une application ou un site, destinée à être distribuée ou réutilisée de manière indépendante (par exemple, dans le cadre d'une syndication).</dd>
-                    <dd>Exemples : un message de forum, un article de magazine ou de journal, ou un article de blog, une fiche produit, un commentaire soumis par un utilisateur, un widget ou gadget interactif, ou tout autre élément de contenu indépendant.</dd>
-                    <dt>section</dt>
-                    <dd>L'élément HTML &lt;section&gt; représente une section générique d'un document, par exemple un groupe de contenu thématique.</dd>
-                    <dd>Une section commence généralement avec un titre.</dd>
-                    <dt>aside</dt>
-                    <dd>L'élément &lt;aside&gt; (en français, « aparté ») représente une partie d'un document dont le contenu n'a qu'un rapport indirect avec le contenu principal du document.</dd>
-                    <dd>Les apartés sont fréquemment présents sous la forme d'encadrés ou de boîtes de légende.</dd>
-                    <dt>footer</dt>
-                    <dd>L'élément HTML &lt;footer&gt; représente le pied de page de la section ou de la racine de sectionnement la plus proche.</dd>
-                    <dd>Un élément &lt;footer&gt; contient habituellement des informations sur l'autrice ou l'auteur de la section, les données relatives au droit d'auteur (copyright) ou les liens vers d'autres documents en relation.</dd>
-                </dl>
-            </section>
-            <section id="aside-utilisation" class="aside-section">
-                <header class="aside-section__header">
-                    <h3 class="aside-section__title">Utilisation</h3>
-                </header>
-                <ul class="aside-section__list">
-                    <li><a href="#main" class="link link--content">&lt;main&gt;</a></li>
-                    <li><a href="#header" class="link link--content">&lt;header&gt;</a></li>
-                    <li><a href="#menu" class="link link--content">&lt;nav&gt;</a></li>
-                    <li><a href="#float" class="link link--content">&lt;article&gt;</a></li>
-                    <li><a href="#float-principe" class="link link--content">&lt;section&gt;</a></li>
-                    <li><a href="#asideInSection" class="link link--content">&lt;aside&gt; dans &lt;section&gt;</a></li>
-                    <li><a href="#aside-doc" class="link link--content">&lt;aside&gt;</a></li>
-                    <li><a href="#aside-principe" class="link link--content">&lt;section&gt; dans &lt;aside&gt;</a></li>
-                    <li><a href="#footer" class="link link--content">&lt;footer&gt;</a></li>
-                </ul>
-                <aside class="aside-section__code-block">
-                    <span class="span-label span-aside-code" aria-hidden="true"><strong>aside</strong></span>
-                    <h4 class="aside-section__code-title">Architecture de la page :</h4>
-                    <pre id="code">
-                <code class="aside-section__code">
-            &lt;!DOCTYPE html&gt;
-            &lt;html lang="fr"&gt;
-                &lt;head&gt;
-                    ... (Métadonnées, liens CSS)
-                &lt;/head&gt;
-                &lt;body&gt;
-
-                    &lt;header&gt;
-                        &lt;h1&gt;...&lt;/h1&gt;
-                        &lt;nav id="menu"&gt;...&lt;/nav&gt;
-                    &lt;/header&gt;
-
-                    &lt;main&gt;
-                        &lt;!-- Colonne principale --&gt;
-                        &lt;article id="float"&gt;
-                            &lt;section&gt; ...&lt;/section&gt;
-                        &lt;/article&gt;
-                        &lt;article id="inlineBlock"&gt;...&lt;/article&gt;
-                    &lt;/main&gt;
-
-                    &lt;aside id="aside"&gt;
-                        &lt;!-- Colonne latérale --&gt;
-                        &lt;article&gt;...&lt;/article&gt;
-                    &lt;/aside&gt;
-
-                    &lt;footer&gt;
-                        ...
-                    &lt;/footer&gt;
-
-                &lt;/body&gt;
-            &lt;/html&gt;
-                </code>
-            </pre>
-                </aside>
-            </section>
-            <section id="aside-documentation" class="aside-section">
-                <header class="aside-section__header">
-                    <h3 class="aside-section__title">Documentation</h3>
-                </header>
-                <p>
-                    Pour approfondir la sémantique HTML5 et l'utilisation correcte des éléments de section :
-                </p>
-                <ul class="aside-section__list">
-                    <li>
-                        <strong>Référence MDN (Mozilla Developer Network) :</strong>
-                        <ul class="aside-section__sublist">
-                            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/aside" target="_blank" rel="noopener noreferrer" class="link link--content">Élément <code>&lt;aside&gt;</code></a></li>
-                                <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/main" target="_blank" rel="noopener noreferrer" class="link link--content">Élément <code>&lt;main&gt;</code></a></li>
-                                <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/section" target="_blank" rel="noopener noreferrer" class="link link--content">Élément <code>&lt;section&gt;</code></a></li>
-                                <li><a href="https://developer.mozilla.org/fr/docs/Glossary/Semantics" target="_blank" rel="noopener noreferrer" class="link link--content">Glossaire : Sémantique</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>W3C (Spécification) :</strong>
-                        <ul class="aside-section__sublist">
-                            <li><a href="https://www.w3.org/TR/html52/sections.html#the-aside-element" target="_blank" rel="noopener noreferrer" class="link link--content">HTML 5.2 : The aside element</a> (Documentation de la spécification officielle)</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-    </article>
+        </form>
 </main>
-
-
-<footer id="footer" class="page-footer">
-    <span class="span-label span-footer" aria-hidden="true"><strong>footer</strong></span>
-    <small class="page-footer__copy">Boyer Laurent TP N3 UE 5.2 LP-DWCA session 2025/2026</small>
-</footer>
+<footer></footer>
 </body>
 </html>
