@@ -15,249 +15,184 @@
             padding: 0;
             box-sizing: border-box;
         }
+        :root{
+            --primary-color: #5370b7;
+            --secondary-color: #b753a2;
+            --tertiary-color: #b79a53;
+            --quaternary-color: #53b768;
+            --border-radius: 10px;
+            --title-font : 'Playfair Display';
+            --body-font : 'Lato';
+            --main-font-size: 16px;
+            --font-color: #2b2b2b;
+            --linear-gradient-bg-body: linear-gradient(90deg, #7189c4,#5370b7,#7189c4);
+        }
 
         body {
-            font-family: 'Lato', sans-serif;
-            /* Correction de la syntaxe du dégradé CSS */
-            background: linear-gradient(145deg, #e7f7e7 0%, #d5e9d5 40%, #b8d4b8 100%);
+            font-family: "var(--body-font)", sans-serif;
+            background: var(--linear-gradient-bg-body);
             min-height: 100vh;
-            padding: 20px;
-            color: #333;
+            padding: 2rem 5rem ;
+            color: var(--font-color);
         }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            color: #2d5016;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        fieldset {
-            border: 1px solid #6ba368;
-            border-radius: 8px;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        legend {
-            font-family: 'Playfair Display', serif;
-            color: #4a7c59;
-            font-size: 1.2em;
-            font-weight: bold;
-            padding: 0 10px;
-            margin-left: -10px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        label {
-            font-weight: 700;
-            color: #2d5016;
-            font-size: 0.95em;
-        }
-
-        label .required {
-            color: #c0392b;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="datetime-local"],
-        input[type="number"],
-        textarea,
-        select {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 1em;
-            font-family: inherit;
-            transition: all 0.3s ease;
-        }
-
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: #4a7c59;
-            box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.2);
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* Validation Visuelle Email */
-        input[type="email"]:invalid:not(:placeholder-shown) {
-            border-color: #c0392b;
-            box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.2);
-        }
-
-        input[type="email"]:valid:not(:placeholder-shown) {
-            border-color: #4a7c59;
-            box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.2);
-        }
-
-        /* Boutons Radio */
-        .radio-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            padding: 10px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border: 1px solid #eee;
-        }
-
-        .radio-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .radio-item label {
-            font-weight: normal;
-            color: #333;
-            cursor: pointer;
-        }
-
-        input[type="radio"] {
-            accent-color: #2d5016;
-        }
-
-        /* Encart de dépôt de fichier (PDF) */
-        .file-upload-group {
-            border: 2px dashed #6ba368;
-            background-color: #f9fff9;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .file-upload-group label {
-            display: block;
-            margin-bottom: 15px;
-            font-size: 1.1em;
-            color: #2d5016;
-        }
-
-        .file-upload-group input[type="file"] {
-            display: block;
-            margin: 0 auto;
+        input, select, textarea, button{
             width: 100%;
-            max-width: 300px;
-            padding: 10px;
-            border: 1px solid #4a7c59;
-            background-color: white;
-            border-radius: 4px;
-            cursor: pointer;
+            padding: 0.5rem;
+            margin: 0.5rem;
+            border: 2px solid var(--tertiary-color);
+            border-radius: var(--border-radius);
+            font-family: "var(--body-font)", sans-serif;
+            font-size: 1rem;
+        }
+        .nameSurname{
+            width: 100%;
+            text-align: end;
+        }
+        .container{
+            display: grid;
+            grid-template-areas: "header header header"
+                                "article article article";
+
+        }
+        .main__header{
+            grid-area: header;
         }
 
-        /* Boutons de formulaire */
-        .btn-group {
+        .main__header--title{
+            font-family: "var(--title-font)", serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .main__content{
+            grid-area: article;
             display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 2.5rem;
 
-        input[type="submit"], input[type="reset"] {
-            padding: 14px 30px;
+        }
+        .main__content--title{
+            font-family: "var(--title-font)", serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border: 2px solid var(--tertiary-color);
+            border-radius: var(--border-radius);
+        }
+        .form-group{
+
+            width: 100%;
+            background-color: var(--quaternary-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 2px solid var(--tertiary-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-group__container{
+            display: grid;
+            gap: 1rem;
+            grid-template-areas:    "person-in-charge  person-in-charge ."
+                                    "description-and-label programming-and-deadline subTaskFieldset"
+                                    " documentation-and-files documentation-and-files validation-fieldset";
+
+        }
+        #person-in-charge{
+            grid-area: person-in-charge;
             border: none;
-            border-radius: 8px;
-            font-size: 1em;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            flex: 1;
-        }
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            width: 100%;
 
-        input[type="submit"] {
-            background-color: #2d5016;
-            color: white;
         }
-
-        input[type="submit"]:hover {
-            background-color: #1f360e;
-            transform: translateY(-1px);
+        #description-and-label{
+            grid-area: description-and-label;
         }
-
-        input[type="reset"] {
-            background-color: #e0e0e0;
-            color: #333;
+        #programming-and-deadline{
+            grid-area: programming-and-deadline;
         }
+        #documentation-and-files{
+            grid-area: documentation-and-files;
+        }
+        #validation-fieldset{
+            grid-area: validation-fieldset;
+        }
+        #subTaskFieldset{
+            grid-area: subTaskFieldset;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 1rem;
 
-        .btn-add {
-            padding: 8px 15px;
-            background: #4a7c59;
-            color: white;
+        }
+        .form-group__fieldset{
+            display: flex;
+            flex-flow: column nowrap;
+            width: 100%;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            height: fit-content;
+        }
+       input[type="email"]:valid{
+        border: 2px double var(--primary-color);
+        background-color: var(--tertiary-color);
+    }
+       /* input[type="email"]:invalid{
+            border: 2px double darkred;
+            background-color: pink;
+        }
+        input[type="file"]::-webkit-file-upload-button, input[type="file"]::file-selector-button{
             border: none;
-            border-radius: 5px;
+            background-color: var(--quaternary-color);
+        }
+*/
+        #fichiers_joints{
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+            width: 1px;
+            height: 1px;
+        }
+        .button__upload--personalize{
+            display: inline-block;
+            padding: 1rem;
+            color: #fff;
+            background-color: var(--secondary-color);
+            border: 2px solid var(--tertiary-color);
+            border-radius: var(--border-radius);
             cursor: pointer;
-            font-size: 0.9em;
-            align-self: flex-start;
-            transition: background 0.3s;
+            transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+        }
+        .button__upload--personalize:hover{
+            background-color: var(--primary-color);
+            color:var(--secondary-color);
         }
 
-        .btn-add:hover {
-            background: #2d5016;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            fieldset {
-                grid-template-columns: 1fr;
-            }
-            .btn-group {
-                flex-direction: column;
-            }
-        }
     </style>
 </head>
 <body>
-<main>
-    <header>
-        <h1>Nouvelle Tâche</h1>
+<main class="container">
+    <header class="main__header">
+        <h1 class="main__header--title">Nouvelle Tâche</h1>
     </header>
-    <article>
-        <h2>Créer une nouvelle tâche</h2>
+    <article class="main__content">
+        <h2 class="main__content--title">Créer une nouvelle tâche</h2>
         <section class="form-group">
-            <form action="#" method="post" enctype="multipart/form-data">
+            <form class="form-group__container" action="#" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="">
-                <fieldset>
-                    <legend>Personne en charge:</legend>
-                    <label for="assignation">Nom et prénom</label>
+                <fieldset class="form-group__fieldset" id="person-in-charge">
+                    <legend class="form-group__fieldset--legend">Personne en charge:</legend>
+                    <label for="assignation" class="nameSurname">Nom et prénom</label>
                     <input type="text" id="assignation" name="assignation">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" placeholder="saisissez votre email" required>
                 </fieldset>
-                <fieldset>
-                    <legend>Libellé et description:</legend>
-                    <label for="libelle">Description</label>
+                <fieldset class="form-group__fieldset" id="description-and-label">
+                    <legend class="form-group__fieldset--legend">Libellé et description:</legend>
+                    <label for="libelle">Libellé</label>
                     <input type="text" id="libelle" name="libelle">
-                    <label for="acadamicSubject"></label>
-                    <select id="acadamicSubject" name="acadamicSubject">
+                    <label for="academicSubject">Matière</label>
+                    <select id="academicSubject" name="academicSubject">
                         <option value="">choisir</option>
                         <option value="1" data-category="Développement Web" data-description="Structure et style des pages web.">HTML/CSS</option>
                         <option value="2" data-category="Développement Web" data-description="Langage de programmation côté client.">JavaScript</option>
@@ -305,6 +240,7 @@
                     </select>
                     <label for="skillsLevel">Niveau de Compétence :</label>
                     <select id="skillsLevel" name="skillsLevel">
+                        <option value="">choisir</option>
                         <option value="1" data-description="Découverte des concepts de base" data-experience="0-6 mois">débutant</option>
                         <option value="2" data-description="Compréhension des fondamentaux" data-experience="6 mois - 1 an">initié</option>
                         <option value="3" data-description="Application pratique autonome" data-experience="1-2 ans">intermédiaire</option>
@@ -316,6 +252,7 @@
                     </select>
                     <label for="difficultyRating">Difficulté Estimée :</label>
                     <select id="difficultyRating" name="difficultyRating">
+                        <option value="">choisir</option>
                         <option value="1" data-note="Niveau débutant - concepts de base">facile</option>
                         <option value="2" data-note="Niveau intermédiaire - pratique régulière">moyen</option>
                         <option value="3" data-note="Niveau avancé - expertise technique">difficile</option>
@@ -325,6 +262,7 @@
                     <textarea id="description" name="description" rows="5"></textarea>
                     <label for="taskProgression">Progression de la Tâche :</label>
                     <select id="taskProgression" name="taskProgression">
+                        <option value="">choisir</option>
                         <option value="1">Nouvelle tâche</option>
                         <option value="2">conception</option>
                         <option value="3">en cours</option>
@@ -334,10 +272,11 @@
                         <option value="7">Archivé</option>
                     </select>
                 </fieldset>
-                <fieldset>
-                    <legend>Planification et échéance:</legend>
+                <fieldset class="form-group__fieldset" id="programming-and-deadline">
+                    <legend class="form-group__fieldset--legend">Planification et échéance:</legend>
                     <label for="priorityStatus">Statut de Priorité :</label>
                     <select id="priorityStatus" name="priorityStatus">
+                        <option value="">choisir</option>
                         <option value="1">Important</option>
                         <option value="2">Haut</option>
                         <option value="3">Moyen</option>
@@ -346,18 +285,18 @@
                     </select>
                     <label for="date_de_completion">Date échéance</label>
                     <input type="date" id="date_de_completion" name="date_de_completion">
-                    <label for="timer"></label>
+                    <label for="timer">Temps consacré à la réalisation</label>
                     <input type="number" id="timer" name="timer">
                 </fieldset>
-                <fieldset class="documentation-group">
-                    <legend>Documentation et Fichiers</legend>
+                <fieldset class="form-group__fieldset" id="documentation-and-files">
+                    <legend class="form-group__fieldset--legend">Documentation et Fichiers</legend>
 
-                    <div class="form-group file-upload-group">
-                        <label for="fichiers_joints">📥 Déposer des Fichiers Joints</label>
+                    <div class="form-group__fieldset">
+                        <label for="fichiers_joints" class="button__upload--personalize">📥 Déposer des Fichiers Joints</label>
                         <input type="file" id="fichiers_joints" name="fichiers_joints[]" multiple>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group__fieldset">
                         <label for="docFileUrl">Liens de documentation (URL)</label>
                         <div class="file-list" id="doc-list">
                             <input id="docFileUrl" type="url" name="documentation[]" placeholder="https://exemple.com/doc1">
@@ -365,24 +304,40 @@
                         <button type="button" class="btn-add" onclick="ajouterDoc()">+ Ajouter un lien</button>
                     </div>
                 </fieldset>
-                <fieldset>
-                    <legend>Sous-Tâches Associées (to_do_list_associee)</legend>
-                    <div class="subtask-group">
-                        <h3>To Do A (Préparation/Structure)</h3>
-                        <div class="subtask-list" id="todo-a-list">
-                            <div class="subtask-item">
-                                <label for="subTaskA"></label>
-                                <input id="subTaskA" type="text" name="subTaskA[]" placeholder="SubTask (Ex: Structure HTML)">
-                                <label>
-                                    <textarea  name="commentaireA[]" placeholder="Commentaire (Ex: Créer la structure sémantique)"></textarea>
-                                </label>
+                <fieldset class="form-group__fieldset" id="subTaskFieldset">
+                    <legend class="form-group__fieldset--legend">Sous-Tâches Associées</legend>
+                    <section class="subtask-section">
+                        <div class="subtask-section__container">
+                            <h3 class="subtask-section__container--title">To Do A (Préparation/Structure)</h3>
+                            <div class="subtask-section__container--field-item" id="todo-a-list">
+                                <div class="subtask-section__container--field">
+                                    <label for="subTaskA"></label>
+                                    <input id="subTaskA" type="text" name="subTaskA[]" placeholder="sous-tâche (Ex: Structure HTML)">
+                                    <label>
+                                        <textarea  name="commentaireA[]" placeholder="Commentaire (Ex: Créer la structure sémantique)"></textarea>
+                                    </label>
+                                </div>
                             </div>
-                            <button type="button" class="btn-add" onclick="ajouterToDoA()">+ Ajouter ToDo A</button>
                         </div>
-                    </div>
+                    </section>
+                    <section class="subtask-section">
+                        <div class="subtask-section__container">
+                            <h3 class="subtask-section__container--title">To Do B (Préparation/Structure)</h3>
+                            <div class="subtask-section__container--field-item" id="todo-b-list">
+                                <div class="subtask-section__container--field">
+                                    <label for="subTaskB"></label>
+                                    <input id="subTaskB" type="text" name="subTaskB[]" placeholder="sous-tâche (Ex: Structure HTML)">
+                                    <label>
+                                        <textarea  name="commentaireB[]" placeholder="Commentaire (Ex: Créer la structure sémantique)"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                 </fieldset>
-                <fieldset>
-                    <legend>Validation de la tâche:</legend>
+                <fieldset class="form-group__fieldset" id="validation-fieldset">
+                    <legend class="form-group__fieldset--legend">Validation de la tâche:</legend>
                     <div class="btn-group">
                         <input type="reset" value="Réinitialiser">
                         <input type="submit" value="Créer la tâche">
