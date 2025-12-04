@@ -4,30 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cffeea33-b9a7-45de-9728-bf5bb44ba32f" name="Changes" comment="Application style css structure grid.&#10;Affiner style, agencement et alignement du formulaire." />
+    <list default="true" id="cffeea33-b9a7-45de-9728-bf5bb44ba32f" name="Changes" comment="Application style css structure grid.&#10;Affiner style, agencement et alignement du formulaire.">
+      <change afterPath="$PROJECT_DIR$/JS/API/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/Patterns/constructors/academicConfigConstructor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/Patterns/constructors/difficultyRatingConstructor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/Patterns/constructors/priorityStatusConstructor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/Patterns/constructors/skillsLevelCOnstructor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/Patterns/constructors/subTaskConstructor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/Patterns/constructors/taskConstructor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/Patterns/constructors/taskProgressionConstructor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/Patterns/factories/selectProgressionFactory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/subTask.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form-ToDoList.html" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Form-ToDoList.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "LaurentBoyer1976"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;LaurentBoyer1976&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/LaurentBoyer1976/UE-5.2-Dev-Front-end-fondamentaux-de-la-programmation.git",
-    "accountId": "6ebf10ae-e500-46d5-967c-fbb50a7d7d8d"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/LaurentBoyer1976/UE-5.2-Dev-Front-end-fondamentaux-de-la-programmation.git&quot;,
+    &quot;accountId&quot;: &quot;6ebf10ae-e500-46d5-967c-fbb50a7d7d8d&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="36G4SKdVfgJFIqcqrqwxaiukH4a" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -39,7 +61,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "FormLaurentNoJS",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Laurent/Formation_dev/LPDWCA/UE 5.2 Dev Front-end fondamentaux de la programmation/UE 5.2.2 Langages JS API et initiation Framework JS/UE 5.2.2 TPJson To Do list Step 2",
     "node.js.detected.package.eslint": "true",
@@ -47,9 +69,17 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Laurent\Formation_dev\LPDWCA\UE 5.2 Dev Front-end fondamentaux de la programmation\UE 5.2.2 Langages JS API et initiation Framework JS\UE 5.2.2 TPJson To Do list Step 2\JS\Patterns\factories" />
+      <recent name="C:\Users\Laurent\Formation_dev\LPDWCA\UE 5.2 Dev Front-end fondamentaux de la programmation\UE 5.2.2 Langages JS API et initiation Framework JS\UE 5.2.2 TPJson To Do list Step 2\Data" />
+      <recent name="C:\Users\Laurent\Formation_dev\LPDWCA\UE 5.2 Dev Front-end fondamentaux de la programmation\UE 5.2.2 Langages JS API et initiation Framework JS\UE 5.2.2 TPJson To Do list Step 2\JS" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -65,6 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1764619572803</updated>
       <workItem from="1764619573962" duration="9613000" />
+      <workItem from="1764862718905" duration="4571000" />
     </task>
     <task id="LOCAL-00001" summary="Application style css structure grid.&#10;Affiner style, agencement et alignement du formulaire.">
       <option name="closed" value="true" />
